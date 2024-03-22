@@ -1,11 +1,16 @@
+import PreLoader from "./components/PreLoader/PreLoader";
 import NavBar from "./components/NavBar/NavBar";
-import './App.scss';
+
 import { useState } from "react";
+
+import './App.scss';
+
 
 function App() {
 
   return (
     <>
+      <PreLoader/>
       <NavBar/>
     </>
     

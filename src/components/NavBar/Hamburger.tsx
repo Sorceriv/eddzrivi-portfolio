@@ -17,14 +17,14 @@ function Hamburger() {
                     onClick={() => setActive(previous_state => !previous_state)}
                     className="hamburger relative h-20 w-20 rounded-full bg-white/0 transition-colors hover:bg-white/20"
                     animate={active ? "open" : "closed"}
-                    // variants= {{
-                    //     open: {
-                    //         background: "bg-white",
-                    //     },
-                    //     closed: {
-                    //         background: "bg-white/0",
-                    //     }
-                    // }}
+                    variants= {{
+                        open: {
+                            background: "rgba(255,255,255,0.2)",
+                        },
+                        closed: {
+                            background: "rgba(255,255,255,0)",
+                        }
+                    }}
                 >
                     <motion.span
                         style={{

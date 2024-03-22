@@ -1,7 +1,7 @@
-import  './NavBar.scss'
 import Hamburger from "./Hamburger";
 import ModeToggle from "./ModeToggle";
 import { motion } from "framer-motion";
+import  './NavBar.scss'
 
 function NavBar() {
     return (
