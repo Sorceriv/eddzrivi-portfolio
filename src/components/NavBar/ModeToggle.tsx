@@ -1,9 +1,20 @@
 import { motion, MotionConfig } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function ModeToggle() {
     const [active, setActive] = useState(false);
+    const setDarkMode = () => {
+        document.querySelector("body")?.setAttribute('data-theme', 'dark')
+    }
+
+    const setLightMode = () => {
+        document.querySelector("body")?.setAttribute('data-theme', 'light')
+    }
     
+    useEffect(() => {
+        active ? setLightMode() : setDarkMode()
+    }, [active]); // <- add the count variable here
+
     return (
         <> 
             <MotionConfig
@@ -15,7 +26,7 @@ function ModeToggle() {
                 <motion.button 
                     initial={false}
                     onClick={() => setActive(previous_state => !previous_state)}
-                    className="mode-toggle relative h-20 w-20 rounded-full bg-white/0 transition-colors hover:bg-white/20"
+                    className="mode-toggle relative h-20 w-20 rounded-full bg-white/0 transition-colors"
                     animate={active ? "light" : "dark"}
                     // variants= {{
                     //     open: {
@@ -46,7 +57,7 @@ function ModeToggle() {
                                 //rotate: ["108deg", "0deg", "0deg"],
                                 left: ["75%", "50%", "50%", "50%"],
                                 boxShadow: ["none","none","none", "none"],
-                                background: ["transparent", "transparent", "transparent", "white"],
+                                background: ["transparent", "transparent", "transparent", "black"],
                             }
                         }}
                     />

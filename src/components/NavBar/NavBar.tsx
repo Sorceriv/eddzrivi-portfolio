@@ -14,8 +14,10 @@ function NavBar() {
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
               </ul>
-              <ModeToggle/>
-              <Hamburger/>
+              <div className="toggles">
+                <ModeToggle/>
+                <Hamburger/>
+              </div>
             </nav>
             
         </>

@@ -32,6 +32,7 @@ function Hamburger() {
                             top: "35%",
                             x: "-50%",
                             y: "-50%",
+                            background: "var(--text-color)",
                         }}
                         className="absolute h-1 w-10 bg-white"
                         variants={{
@@ -51,6 +52,7 @@ function Hamburger() {
                             top: "50%",
                             x: "-50%",
                             y: "-50%",
+                            background: "var(--text-color)",
                         }}
                         className="absolute h-1 w-10 bg-white"
                         variants={{
@@ -68,6 +70,7 @@ function Hamburger() {
                             bottom: "35%",
                             x: "-50%",
                             y: "50%",
+                            background: "var(--text-color)",
                         }}
                         className="absolute h-1 w-5 bg-white"
                         variants={{

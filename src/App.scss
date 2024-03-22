@@ -7,12 +7,22 @@
 :root {
   --max-width: 1200px;
   --padding: 5vw;
-  --dark-mode: #121212;
-  --light-mode: #ece8e1;
   --index: 0;
   --primary-font: Poppins;
-  --dark-mode-text: white;
-  --light-mode-text: black;
+  --text-color: white;
+  --background-color: #121212;
+}
+
+[data-theme="dark"] {
+  --text-color: white;
+  --background-color: #121212;
+  transition: 0.5s;
+}
+
+[data-theme="light"] {
+  --text-color: black;
+  --background-color: #ece8e1;
+  transition: 0.5s;
 }
 
 html {
@@ -21,7 +31,8 @@ html {
 
 body {
   font-family: var(--primary-font);
-  background-color: var(--dark-mode);
+  background-color: var(--background-color);
+  color: var(--text-color);
   padding: 0;
   margin: 0;
 }
