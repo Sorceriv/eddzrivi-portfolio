@@ -1,4 +1,4 @@
-import { motion, stagger, Variants, MotionConfig, useAnimate, delay } from "framer-motion";
+import { motion, stagger, Variants, MotionConfig, useAnimate, delay, easeIn } from "framer-motion";
 import { useEffect, useState } from "react";
 
 import  './PreLoader.scss'
@@ -44,7 +44,7 @@ function PreLoader() {
     };
 
     const handleAnimate = async () => {
-        await animate(scope.current, { opacity: 1 }, {delay: 2});
+        await animate(scope.current, { opacity: 1 }, {delay: 1});
         await animate(".disappear", { y: -20, color: "rgba(0,0,0,0)" }, { delay: stagger(0.05)});
         // await animate("#DZ", { display: "inline" });
         // await animate("#DZ", { opacity: 1, }, {delay: 1});
@@ -55,16 +55,26 @@ function PreLoader() {
         //     // ["#D-1", { color: "rgba(0,0,255)", }, { duration: 0.5, }],
         //     // ["#O", { color: "rgba(0,0,255)", }, { duration: 0.5, }],
         // ]);
-        await animate(scope.current, { opacity: 0, zIndex: -9999, }, {delay: 0.5});
         /*await animate(scope.current, { display: "none", zIndex: 0, }, {duration: 0.1});*/
+        animate("#E", { x: "900%", }, { ease: easeIn, });
+        animate("#D", { x: "650%", }, { ease: easeIn, });
+        animate("#R", { x: "400%", }, { ease: easeIn, });
+        animate("#I", { x: "1000%", }, { ease: easeIn, });
+        animate("#V", { x: "-0%", }, { ease: easeIn, });
+        await animate("#I-1", { x: "-0%", }, { ease: easeIn, });
+        animate("#DZ", { position: "absolute", });
+        await animate("#DZ", { display: "inline", opacity: 1, left: "45%", }, { ease: easeIn, delay: 0.5, duration: 0.5});
+        await animate(scope.current, { opacity: 0, zIndex: -9999, }, {delay: 0.5});
+        await animate(scope.current, { transitionEnd: {display: "none"} }, {});
     }
 
     useEffect(()=> {
         setVisible(true);
         handleAnimate();
-        
     });
 
+    //24/03/2024 me: Clean code (specifically animation, find a way to remove percentages), fix error when saving multiple times due to scope not being detected(?) at display none error is maximum callback
+    
     return (
         <> 
         <div ref={ scope } className="preloader">
@@ -92,7 +102,7 @@ function PreLoader() {
                         <motion.span className="disappear" style={{}} variants={child}>D</motion.span>
                         <motion.span className="disappear" id="O" style={{}} variants={child}>O</motion.span>
 
-                        <motion.span id="R-1" style={{}} variants={child}>R</motion.span>
+                        <motion.span id="R" style={{}} variants={child}>R</motion.span>
                         <motion.span id="I" style={{}} variants={child}>I</motion.span>
                         <motion.span className="disappear" style={{}} variants={child}>V</motion.span>
                         <motion.span className="disappear" style={{}} variants={child}>E</motion.span>
