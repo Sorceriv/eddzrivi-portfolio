@@ -37,7 +37,7 @@ function ModeToggle() {
                     //     }
                     // }}
                 >
-                    <span
+                    <motion.span
                         style={{
                             left: "75%",
                             top: "50%",
@@ -61,7 +61,7 @@ function ModeToggle() {
                             }
                         }}
                     />
-                    {/* <span
+                    {/* <motion.span
                         style={{
                             left: "50%",
                             top: "50%",
