@@ -26,7 +26,7 @@ function Hamburger() {
                         }
                     }}
                 >
-                    <motion.span
+                    <span
                         style={{
                             left: "50%",
                             top: "35%",
@@ -46,7 +46,7 @@ function Hamburger() {
                             }
                         }}
                     />
-                    <motion.span
+                    <span
                         style={{
                             left: "50%",
                             top: "50%",
@@ -64,7 +64,7 @@ function Hamburger() {
                             }
                         }}
                     />
-                    <motion.span
+                    <span
                         style={{
                             left: "calc(50% + 10px)",
                             bottom: "35%",
