@@ -1,11 +1,10 @@
-import { motion, stagger, Variants, MotionConfig, useAnimate, delay, easeIn } from "framer-motion";
+import { motion, stagger, Variants, MotionConfig, useAnimate, delay, easeIn, AnimatePresence, usePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 import  './PreLoader.scss'
 
 function PreLoader() {
     const [visible, setVisible] = useState(false);
-    const [scope, animate] = useAnimate();
 
     const container: Variants = {
         hidden: {
@@ -25,7 +24,8 @@ function PreLoader() {
     const child: Variants = {
         hidden: {
             opacity: 0,
-            y: 20,
+            y: "20%",
+            color: "rgba(255,255,255,1)",
             transition: {
                 type: "spring",
                 damping: 12,
@@ -35,6 +35,7 @@ function PreLoader() {
         visible: {
             opacity: 1,
             y: 0,
+            color: "rgba(255,255,255,1)",
             transition: {
                 type: "spring",
                 damping: 12,
@@ -43,88 +44,86 @@ function PreLoader() {
         }
     };
 
-    const handleAnimate = async () => {
-        await animate(scope.current, { opacity: 1 }, {delay: 1});
-        await animate(".disappear", { y: -20, color: "rgba(0,0,0,0)" }, { delay: stagger(0.05)});
-        // await animate("#DZ", { display: "inline" });
-        // await animate("#DZ", { opacity: 1, }, {delay: 1});
-        // await animate([
-        //     //["#U", { color: "rgba(0,0,255)", y: -20 }, { duration: 0.5, }],
-        //     // ["#A", { color: "rgba(0,0,255)", }, { duration: 0.5, }],
-        //     // ["#R", { color: "rgba(0,0,255)", }, { duration: 0.5, }],
-        //     // ["#D-1", { color: "rgba(0,0,255)", }, { duration: 0.5, }],
-        //     // ["#O", { color: "rgba(0,0,255)", }, { duration: 0.5, }],
-        // ]);
-        /*await animate(scope.current, { display: "none", zIndex: 0, }, {duration: 0.1});*/
-        animate("#E", { x: "900%", }, { ease: easeIn, });
-        animate("#D", { x: "650%", }, { ease: easeIn, });
-        animate("#R", { x: "400%", }, { ease: easeIn, });
-        animate("#I", { x: "1000%", }, { ease: easeIn, });
-        animate("#V", { x: "-0%", }, { ease: easeIn, });
-        await animate("#I-1", { x: "-0%", }, { ease: easeIn, });
-        animate("#DZ", { position: "absolute", });
-        await animate("#DZ", { display: "inline", opacity: 1, left: "45%", }, { ease: easeIn, delay: 0.5, duration: 0.5});
-        await animate(scope.current, { opacity: 0, zIndex: -9999, }, {delay: 0.5});
-        await animate(scope.current, { transitionEnd: {display: "none"} }, {});
-    }
+    const [scope, animate] = useAnimate();
 
+    const handleEnterAnimate = async () => {
+        await animate(scope.current, { opacity: 1, zIndex: 9999, }, {delay: 1});
+        await animate(".disappear", { y: "-20%", color: "rgba(0,0,0,0)" }, { delay: stagger(0.05)});
+        
+        animate("#E", { x: "1000%", }, { type: "tween" });
+        animate("#D", { x: "725%", }, { type: "tween" });
+        animate("#R", { x: "400%", }, { type: "tween" });
+        animate("#I", { x: "1000%", }, { type: "tween" });
+        animate("#V", { x: "-75%", }, { type: "tween" });
+        await animate("#I-1", { x: "-195%", }, { type: "tween" });
+        animate("#DZ", { position: "absolute", });
+        await animate("#DZ", { display: "inline", opacity: 1, }, { delay: 0.5, duration: 0.5});
+
+        await animate(scope.current, { opacity: 0, zIndex: -9999, }, {delay: 0.5});
+        await animate(scope.current, { transitionEnd: { display: "none" } }, {});
+    }
     useEffect(()=> {
         setVisible(true);
-        handleAnimate();
+        handleEnterAnimate();
     });
 
+    //!IMPORTANT!
     //24/03/2024 me: Clean code (specifically animation, find a way to remove percentages), fix error when saving multiple times due to scope not being detected(?) at display none error is maximum callback
+    //FIXED: DUE TO EASEIN TRANSITION IS THE CAUSE! SO PUT IT IN MOTIONCONFIG OR USE TYPE: "TWEEN" INSTEAD
+
+    //localize font
     
     return (
         <> 
-        <div ref={ scope } className="preloader">
-            <div className="texts-container">
-                <MotionConfig 
-                    transition={{
-                    }}
-                >
-                    <motion.span
-                        initial="hidden"
-                        variants={container}
-                        style={{
-                            display: "flex",
-                            overflow: "hidden",
+        <AnimatePresence>
+            <motion.div ref={ scope } className="preloader">
+                <div className="texts-container">
+                    <MotionConfig 
+                        transition={{
                         }}
-                        animate={visible ? "visible" : "hidden"}
                     >
-                        
-                        <motion.span id="E" style={{}} variants={child}>E</motion.span>
-                        <motion.span id="D" style={{}} variants={child}>D</motion.span>
-                        <motion.span id="DZ" style={{ opacity: "0", display: "none", }}>DZ</motion.span>
-                        <motion.span className="disappear" style={{}} variants={child}>U</motion.span>
-                        <motion.span className="disappear" style={{}} variants={child}>A</motion.span>
-                        <motion.span className="disappear" style={{}} variants={child}>R</motion.span>
-                        <motion.span className="disappear" style={{}} variants={child}>D</motion.span>
-                        <motion.span className="disappear" id="O" style={{}} variants={child}>O</motion.span>
+                        <motion.span
+                            initial="hidden"
+                            variants={container}
+                            style={{
+                                display: "flex",
+                                overflow: "hidden",
+                            }}
+                            animate={visible ? "visible" : "hidden"}
+                        >
+                            
+                            <motion.span id="E" style={{}} variants={child}>E</motion.span>
+                            <motion.span id="D" style={{}} variants={child}>D</motion.span>
+                            <motion.span id="DZ" initial={{ opacity: 0, display: "none", left: "44.9%",}}>DZ</motion.span>
+                            <motion.span className="disappear" style={{}} variants={child}>U</motion.span>
+                            <motion.span className="disappear" style={{}} variants={child}>A</motion.span>
+                            <motion.span className="disappear" style={{}} variants={child}>R</motion.span>
+                            <motion.span className="disappear" style={{}} variants={child}>D</motion.span>
+                            <motion.span className="disappear" id="O" style={{}} variants={child}>O</motion.span>
+                            <span>  </span>
+                            <motion.span id="R" style={{}} variants={child}>R</motion.span>
+                            <motion.span id="I" style={{}} variants={child}>I</motion.span>
+                            <motion.span className="disappear" style={{}} variants={child}>V</motion.span>
+                            <motion.span className="disappear" style={{}} variants={child}>E</motion.span>
+                            <motion.span className="disappear" style={{}} variants={child}>R</motion.span>
+                            <motion.span className="disappear" style={{}} variants={child}>A</motion.span>
+                            <span>  </span>
+                            <motion.span id="V" style={{}} variants={child}>V</motion.span>
+                            <motion.span id="I-1" style={{}} variants={child}>I</motion.span>
+                            <motion.span className="disappear" style={{}} variants={child}>L</motion.span>
+                            <motion.span className="disappear" style={{}} variants={child}>L</motion.span>
+                            <motion.span className="disappear" style={{}} variants={child}>A</motion.span>
+                            <motion.span className="disappear" style={{}} variants={child}>N</motion.span>
+                            <motion.span className="disappear" style={{}} variants={child}>U</motion.span>
+                            <motion.span className="disappear" style={{}} variants={child}>E</motion.span>
+                            <motion.span className="disappear" style={{}} variants={child}>V</motion.span>
+                            <motion.span className="disappear" style={{}} variants={child}>A</motion.span>
+                        </motion.span>
+                    </MotionConfig>
 
-                        <motion.span id="R" style={{}} variants={child}>R</motion.span>
-                        <motion.span id="I" style={{}} variants={child}>I</motion.span>
-                        <motion.span className="disappear" style={{}} variants={child}>V</motion.span>
-                        <motion.span className="disappear" style={{}} variants={child}>E</motion.span>
-                        <motion.span className="disappear" style={{}} variants={child}>R</motion.span>
-                        <motion.span className="disappear" style={{}} variants={child}>A</motion.span>
-
-                        <motion.span id="V" style={{}} variants={child}>V</motion.span>
-                        <motion.span id="I-1" style={{}} variants={child}>I</motion.span>
-                        <motion.span className="disappear" style={{}} variants={child}>L</motion.span>
-                        <motion.span className="disappear" style={{}} variants={child}>L</motion.span>
-                        <motion.span className="disappear" style={{}} variants={child}>A</motion.span>
-                        <motion.span className="disappear" style={{}} variants={child}>N</motion.span>
-                        <motion.span className="disappear" style={{}} variants={child}>U</motion.span>
-                        <motion.span className="disappear" style={{}} variants={child}>E</motion.span>
-                        <motion.span className="disappear" style={{}} variants={child}>V</motion.span>
-                        <motion.span className="disappear" style={{}} variants={child}>A</motion.span>
-                    </motion.span>
-                </MotionConfig>
-
-            </div>
-        </div>
-
+                </div>
+            </motion.div>
+        </AnimatePresence>
         </>
     )
 }

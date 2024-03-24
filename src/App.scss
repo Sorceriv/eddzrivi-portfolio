@@ -11,18 +11,23 @@
   --primary-font: Poppins;
   --text-color: white;
   --background-color: #121212;
+  --theme-color: #e792a3;
 }
 
 [data-theme="dark"] {
   --text-color: white;
   --background-color: #121212;
+  --theme-color: #e792a3;
   transition: 0.5s;
+  
 }
 
 [data-theme="light"] {
   --text-color: black;
   --background-color: #ece8e1;
+  --theme-color: #DC143C;
   transition: 0.5s;
+  
 }
 
 html {

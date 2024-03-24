@@ -31,8 +31,32 @@ $breakpoint-tablet: 768px;
         li {
             display: inline;
             margin-left: 50px;
+            position: relative; 
+            
+        }
+        
+        a::after {
+            
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 3px;
+            border-radius: 3px;
+            left: 0;
+            position: absolute;
+            background: var(--theme-color);
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+        }
+
+        a:hover::after {
+            width: 50%; 
+            left: 0; 
         }
     }
+
+    
 
     .toggles {
         margin-left: auto;

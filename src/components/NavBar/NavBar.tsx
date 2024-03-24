@@ -7,7 +7,7 @@ function NavBar() {
     return (
         <> 
             <nav className="nav-bar">
-              <span className="logo">EDDZRIVI</span>  
+              <span className="logo"><a href="#">EDDZRIVI</a></span>  
               <ul className="items">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#skills">Skills</a></li>
