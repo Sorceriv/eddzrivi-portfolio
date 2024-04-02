@@ -1,0 +1,166 @@
+.hero-section {
+    padding: 0px var(--padding) var(--padding) var(--padding);
+    height: calc(100vh - 150px); //800px
+    
+    
+    //flex-direction: column;
+    
+    .container-section {
+        display: flex;
+        position: relative;
+        width: 100%;
+        align-items: center;
+        //background-color: green;
+        height: 100%;
+        .text-section {
+            margin-top: -75px;
+            //background-color: yellow;
+            width: 100%;
+            position: relative;
+            //z-index: 1;
+            //align-self: center; //no need if align items is set to center
+            //text-align: center;
+            //background-color: red;
+            
+            text {
+                //background-color: blue;
+                //margin: auto;
+
+                font-size: 50px;
+        
+                //font-weight: 900;
+                //text-align: right;
+                width: 75%;
+            
+                display: block;
+            }
+            
+            text:nth-child(1) {
+                font-size: 35px;
+                color: transparent;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: var(--text-color);
+                //font-weight: 500;
+            }
+        }
+
+        .image-section {
+            //background-color: red;
+            margin-top: -75px;
+            position: relative;
+            //z-index: 0;
+            //align-self: center; //no need if align items is set to center
+            //background-color: red;
+            width: 100%;
+            img {
+                margin-left: auto;
+                border-radius: 15px;
+                width: 150px;
+                filter: grayscale(100%);
+            }
+        }
+
+        .sub-text-section {
+            position: absolute;
+            bottom: 25px;
+            left: 0;
+        }
+
+        .sub-button-section {
+            position: absolute;
+            bottom: 25px;
+            right: 0;
+            //z-index: 5;
+            a {
+                height: 75px;
+                width: 75px;
+                display: block;
+                text-align: center;
+                line-height: 65px;
+                font-size: 18px;
+                background-color: black;
+                color: white;
+                transition: 0.2s ease-in-out;
+                border-radius: 50%;
+                border: 2px solid var(--text-color);
+            } 
+
+            a:hover {
+                border: 2px solid var(--theme-color);
+            }
+        }
+    }
+}
+//FOR 02/04/2024 EDDZ:
+//Fix mouse cursor mechanics, hide on mobile view, fix lagging (DONE except lagging, check in live site)
+//Await loading animation before playing entrance animations, put all animations in functions for await call in app(?) (DONE)
+//position fixed of hamburger onclick (maybe set body position to fixed if navbar open) (DONE)
+//Fix slider of skills, arrows, and its layout including mobile (CURRENTLY AT LAYOUTS)
+//Fix scroll animations
+//Hidden overflow x for mousecursor to be hidden not scroll on page when going beyond x axis (DONE)
+//Fix hamburger menu onclick animation go to section of page
+//fix styles to  be responsive! specially hero section think of idea then make it resposnive at all sizes (vw optimization) then add entry animations then add hamburger on scroll
+
+
+@media (min-width: 768px) {
+    .hero-section {
+        .container-section {
+            height: calc(100vh - 140px); //800px
+            flex-direction: row;
+            align-items: center;
+            
+
+            .text-section {
+              
+                text {
+                    font-size: 7vw;
+                    width: 75%;
+                    margin: auto;
+                }
+            
+                text:nth-child(1) {
+                    font-size: 4vw;
+                }
+            }
+            .image-section {
+     
+                img {
+                    margin: auto;
+                    width: 20vw;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1550px) {
+    .hero-section {
+        .container-section {
+            height: calc(100vh - 140px); //800px
+            //background-color: blue;
+            flex-direction: row;
+            align-items: center;
+
+            .text-section {
+       
+                text {
+                    font-size: 125px;
+                    width: 75%;
+                    margin: auto;
+                }
+            
+                text:nth-child(1) {
+                    font-size: 75px;
+                }
+            }
+            .image-section {
+              
+                img {
+                    margin: auto;
+                    border-radius: 15px;
+                    width: 375px;
+                }
+            }
+        }
+    }
+}

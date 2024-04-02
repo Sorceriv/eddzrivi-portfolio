@@ -3,7 +3,11 @@ import { useEffect, useState } from "react";
 
 import  './PreLoader.scss'
 
-function PreLoader() {
+interface Props {
+    onLoaded: () => void;
+}
+
+function PreLoader({onLoaded}: Props) {
     const [visible, setVisible] = useState(false);
 
     const container: Variants = {
@@ -47,7 +51,7 @@ function PreLoader() {
     const [scope, animate] = useAnimate();
 
     const handleEnterAnimate = async () => {
-        await animate(scope.current, { opacity: 1, zIndex: 9999, }, {delay: 1});
+        await animate(scope.current, { opacity: 1, zIndex: 100, }, {delay: 1});
         await animate(".disappear", { y: "-20%", color: "rgba(0,0,0,0)" }, { delay: stagger(0.05)});
         
         animate("#E", { x: "1000%", }, { type: "tween" });
@@ -59,8 +63,9 @@ function PreLoader() {
         animate("#DZ", { position: "absolute", });
         await animate("#DZ", { display: "inline", opacity: 1, }, { delay: 0.5, duration: 0.5});
 
-        await animate(scope.current, { opacity: 0, zIndex: -9999, }, {delay: 0.5});
-        await animate(scope.current, { transitionEnd: { display: "none" } }, {});
+        await animate(scope.current, { opacity: 0, }, {delay: 0.5});
+        await animate(scope.current, { transitionEnd: { display: "none", zIndex: -100 } }, {});
+        await onLoaded();
     }
     useEffect(()=> {
         setVisible(true);

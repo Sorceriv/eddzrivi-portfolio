@@ -1,0 +1,27 @@
+.skill {
+    background-color: var(--text-color);
+    min-width: 400px;
+    min-height: 300px;
+    border-radius: 15px;
+    padding: 40px 35px;
+    .skill-image {
+        height: 75px;
+        width: 75px;
+        img {
+            filter: invert(var(--inverse-color));
+        }
+    }
+    h4 {
+        margin-top: 20px;
+        color: var(--text-color-inverse);
+        font-size: 24px;
+        font-weight: 900;
+    }
+    text {
+        margin-top: 15px;
+        color: var(--text-color-inverse);
+        font-size: 14px;
+        //text-align: justify;
+        display: block;
+    }
+}
