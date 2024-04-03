@@ -29,6 +29,9 @@
   --text-color: white;
   --background-color: #121212;
   --theme-color: #e792a3;
+  --header-font-size: 50px;
+  --subheader-font-size: 35px;
+  --text-font-size: 16px;
 }
 
 [data-theme="dark"] {
@@ -131,6 +134,40 @@ body::-webkit-scrollbar-thumb {
 @media (min-width: 768px) {
   * {
     cursor: none!important;
+  }
+
+  :root {
+    --header-font-size: 7vw;
+    --subheader-font-size: 4vw;
+    --text-font-size: 18px;
+  }
+  
+  .main-container {
+    max-width: var(--max-width);
+    display: block;
+    margin: auto;
+    .custom-cursor {
+      z-index: 3;
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      background-color: var(--text-color);
+      border-radius: 50%;
+      pointer-events: none;
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 1550px) {
+  * {
+    cursor: none!important;
+  }
+
+  :root {
+    --header-font-size: 125px;
+    --subheader-font-size: 75px;
+    --text-font-size: 18px;
   }
   
   .main-container {

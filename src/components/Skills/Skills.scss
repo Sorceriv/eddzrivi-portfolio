@@ -3,25 +3,30 @@
     .text-section {
         display: flex;
         justify-content: space-between;
+        flex-direction: column;
         .skills-title {
-            font-size: 100px;
-            margin-top: -32px;
-            //text-align: right;
+            font-size: var(--header-font-size);
+            margin-top: 0px;
+            text-align: left;
             //font-weight: 600;
             //border-bottom: 5px solid var(--text-color);
         }
         .text-section-right {
+            margin-top: 0px;
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
+            //background-color: red;
+            height: 300px;
             h3 {
-                font-size: 18px;
+                font-size: var(--text-font-size);
                 border-bottom: 1px solid var(--text-color);
-                text-align: right;
-                height: 50%;
+                text-align: left;
+                height: 125px;
+                //background-color: red;
             }
             .skills-buttons {
-                text-align: right;
+                text-align: left;
                 button {
                     height: 75px;
                     width: 75px;
@@ -30,7 +35,8 @@
                     border-radius: 50%;
                     font-size: 32px;
                     font-weight: 900;
-                    margin-left: 20px;
+                    margin-right: 20px;
+                    margin-left: 0px;
                     border: 1px solid var(--text-color-inverse);
                     transition: 0.5s ease-in-out;
                 }
@@ -55,25 +61,68 @@
     }
 }
 
-// @media (min-width: 768px) {
-//     .skills-section {
-//         //margin-top: 50px;
-//         padding: 10vw var(--padding);
-//         .skills-title {
-//             font-size: 7vw;
-//             //text-align: right;
-//             //font-weight: 600;
-//             border-bottom: 5px solid var(--text-color);
-//         }
-//         .skills-container {
-//             h3 {
-//                 //text-align: right;
-//                 font-size: 18px;
-//                 margin-top: 40px;
-//             }
-//         }
-//     }
-// }
+@media (min-width: 768px) {
+    .skills-section {
+        padding: var(--padding);
+        .text-section {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            .skills-title {
+                font-size: var(--header-font-size);
+                margin-top: -16px;
+                text-align: left;
+                //font-weight: 600;
+                //border-bottom: 5px solid var(--text-color);
+            }
+            .text-section-right {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                margin-top: 0px;
+                width: 90%;
+                h3 {
+                    font-size: var(--text-font-size);
+                    border-bottom: 1px solid var(--text-color);
+                    text-align: right;
+                    height: 50%;
+                }
+                .skills-buttons {
+                    text-align: right;
+                    button {
+                        height: 75px;
+                        width: 75px;
+                        background-color: var(--text-color);
+                        color: var(--text-color-inverse);
+                        border-radius: 50%;
+                        font-size: 32px;
+                        font-weight: 900;
+                        margin-left: 20px;
+                        margin-right: 0px;
+                        border: 1px solid var(--text-color-inverse);
+                        transition: 0.5s ease-in-out;
+                    }
+                    
+                    button:hover {
+                        //opacity: 0.9;
+                    }
+                }
+            }
+        }
+    
+        .skills-container {
+            overflow: hidden;
+            position: relative;
+            .skill-container {
+                position: relative;
+                margin-top: 50px;
+                display: flex;
+                gap: 25px;
+                justify-content: space-between;
+            }
+        }
+    }
+}
 
 // @media (min-width: 1550px) {
 //     .skills-section {
