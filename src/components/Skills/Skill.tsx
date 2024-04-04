@@ -1,20 +1,34 @@
 import  './Skill.scss'
 import atom from '../../assets/atom.svg';
+import { motion } from 'framer-motion';
+
 interface Props {
     title: String;
     text: String;
+    onMouseEnter: () => void;
+    onMouseLeave: () => void;
 }
 
-function Skill({title, text}: Props) {
+function Skill({title, text, onMouseEnter, onMouseLeave}: Props) {
+    const animate = {}
     return (
         <> 
-            <div className="skill">
+            <motion.div 
+                onHoverStart={e => {rotate: 1}}
+                onHoverEnd={e => {}}
+                whileHover={{ rotate: 1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                //whileTap={{ rotate: 1 }} 
+                className="skill" 
+                onMouseEnter={onMouseEnter} 
+                onMouseLeave={onMouseLeave}
+            >
                 <div className="skill-image">
                     <img src={atom}/>
                 </div>
                 <h4>{ title }</h4>
                 <text>{ text }</text>
-            </div>
+            </motion.div>
         </>
     )
 }

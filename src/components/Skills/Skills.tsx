@@ -4,7 +4,12 @@ import atom from '../../assets/atom.svg';
 import { animate, motion, useAnimate, useMotionValue } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 
-function Skills() {
+interface Props {
+    onMouseEnter: () => void;
+    onMouseLeave: () => void;
+}
+
+function Skills({onMouseEnter, onMouseLeave}: Props) {
     /*Skills*/
     const skills_array = [
         {
@@ -113,7 +118,7 @@ function Skills() {
                         // }}
                     >
                         {skills_array.map((d, i) => (
-                            <Skill title={d.title} text={d.text} key={i}/>
+                            <Skill title={d.title} text={d.text} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}  key={i}/>
                         ))}
                     </motion.div>
                 </div>

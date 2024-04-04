@@ -45,13 +45,17 @@ function App() {
       mixBlendMode: "difference",
       backgroundColor: "white",
     },
-    thirdVariantWorksPlaceholder: {
-
+    opposite: {
+      x: `${x - size/2}px`,
+      y: `${y - size/2}px`,
+      backgroundColor: "var(--background-color)",
+      TransitionEvent: 5,
     }
   }
 
   const textEnter = () => setCursorVariant("text");
-  const textLeave = () => setCursorVariant("default");
+  const skillEnter = () => setCursorVariant("opposite");
+  const cursorLeave = () => setCursorVariant("default");
 
   /*Nav Bar Hamburger Handler*/
   const [hamburgerActive, setHamburgerActive] = useState(false);
@@ -81,14 +85,15 @@ function App() {
           animate={cursorVariant}
           transition={{
             type: "tween",
+            duration: 0.5,
             ease: "backOut",
           }}
         >
         </motion.div>
 
         <NavBar hamburgerActive={onHamburgerActive}/>
-        <Hero onMouseEnter={textEnter} onMouseLeave={textLeave}/>
-        <Skills/>
+        <Hero onMouseEnter={textEnter} onMouseLeave={cursorLeave}/>
+        <Skills onMouseEnter={skillEnter} onMouseLeave={cursorLeave}/>
       </div>
     </>
     

@@ -26,7 +26,7 @@
   --padding: 5vw;
   --index: 0;
   --primary-font: Poppins;
-  --text-color: white;
+  --text-color: #FFFFFF;
   --background-color: #121212;
   --theme-color: #e792a3;
   --header-font-size: 50px;
@@ -35,8 +35,8 @@
 }
 
 [data-theme="dark"] {
-  --text-color: white;
-  --text-color-inverse: black;
+  --text-color: #FFFFFF;
+  --text-color-inverse: #000000;
   --inverse-color: 0%;
   --background-color: #121212;
   --theme-color: #e792a3;
@@ -44,8 +44,8 @@
 }
 
 [data-theme="light"] {
-  --text-color: black;
-  --text-color-inverse: white;
+  --text-color: #000000;
+  --text-color-inverse: #FFFFFF;
   --inverse-color: 100%;
   --background-color: #ece8e1;
   --theme-color: #DC143C;
