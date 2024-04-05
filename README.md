@@ -43,6 +43,8 @@ Update Logs:
 
 --Upgraded mouse cursor
 
+--Created contacts section
+
 -04/04/2024
 
 --Upgrades to skillcard animations
