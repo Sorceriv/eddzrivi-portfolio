@@ -8,7 +8,7 @@ import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 
-import { animate, motion, useScroll } from "framer-motion";
+import { animate, motion, useScroll, Variants } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 import './App.scss';
@@ -33,7 +33,7 @@ function App() {
   const [cursorVariant, setCursorVariant] = useState("default");
   const size = 20;
   
-  const variants = {
+  const variants : Variants = {
     default: {
       x: `${x - size/2}px`,
       y: `${y - size/2}px`,

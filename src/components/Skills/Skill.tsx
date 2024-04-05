@@ -10,12 +10,9 @@ interface Props {
 }
 
 function Skill({title, text, onMouseEnter, onMouseLeave}: Props) {
-    const animate = {}
     return (
         <> 
             <motion.div 
-                onHoverStart={e => {rotate: 1}}
-                onHoverEnd={e => {}}
                 whileHover={{ rotate: 1 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 //whileTap={{ rotate: 1 }} 

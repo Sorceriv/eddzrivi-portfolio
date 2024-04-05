@@ -8,7 +8,7 @@ export default function useMousePosition({preLoaderLoaded}: Props) {
 
     const [mousePosition, setMousePosition] = useState({x: 0, y:0})
     
-    const updateMousePosition = (e) => {
+    const updateMousePosition = (e: any) => {
         const localY = e.pageY; //- e.target.offsetTop;
         setMousePosition({x: e.clientX, y: localY});
     }

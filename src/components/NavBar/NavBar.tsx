@@ -1,6 +1,6 @@
 import Hamburger from "./Hamburger";
 import ModeToggle from "./ModeToggle";
-import { motion, useAnimate } from "framer-motion";
+import { useAnimate } from "framer-motion";
 import  './NavBar.scss'
 import { useEffect, useState } from "react";
 

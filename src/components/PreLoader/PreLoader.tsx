@@ -1,4 +1,4 @@
-import { motion, stagger, Variants, MotionConfig, useAnimate, delay, easeIn, AnimatePresence, usePresence } from "framer-motion";
+import { motion, stagger, Variants, MotionConfig, useAnimate, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 import  './PreLoader.scss'

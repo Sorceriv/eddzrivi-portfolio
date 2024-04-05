@@ -1,8 +1,7 @@
 import  './Skills.scss'
 import Skill from './Skill';
-import atom from '../../assets/atom.svg';
-import { animate, motion, useAnimate, useMotionValue } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { motion, useAnimate } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 interface Props {
     onMouseEnter: () => void;
@@ -43,12 +42,12 @@ function Skills({onMouseEnter, onMouseLeave}: Props) {
     
 
     useEffect(() => {
-        const observer = new ResizeObserver(entries => {
-            console.log("Test");
+        const observer = new ResizeObserver(() => {
+            //console.log("Testt");
             setCarouselWidth(scope.current.scrollWidth - scope.current.offsetWidth);
+            setLeft(0); //Sets left upon resize of screen to avoid design bug on screen resize
         });
         observer.observe(scope.current);
-        setLeft(0); //Sets left upon resize of screen to avoid design bug on screen resize
         return () => scope.current && observer.unobserve(scope.current);
     }, [carouselWidth])
 

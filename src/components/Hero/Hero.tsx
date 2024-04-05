@@ -4,7 +4,7 @@ import { motion, useTransform } from 'framer-motion';
 
 
 
-export default function Hero({onMouseEnter, onMouseLeave, progress, range, targetScale}) {
+export default function Hero({onMouseEnter, onMouseLeave, progress, range, targetScale}: any) {
     const scale = useTransform(progress, range, [1, targetScale]);
     const opacity = useTransform(progress, range, [1, 0]);
     return (
@@ -12,7 +12,7 @@ export default function Hero({onMouseEnter, onMouseLeave, progress, range, targe
             <div id="home" className="hero-section">
                 <motion.div style={{ scale, opacity }} className="container-section">
                     <div className="text-section">
-                        <h1><strike>Hello</strike>, I am</h1>
+                        <h1><s>Hello</s>, I am</h1>
                         <h1 onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>Eduardo Villanueva</h1>
                     </div>
                     <div className="image-section">
