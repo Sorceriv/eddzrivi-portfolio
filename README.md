@@ -30,15 +30,28 @@ export default {
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
 Update Logs:
+
 -06/04/2024
+
 --
+
 -05/04/2024
+
 --Created projects section
+
 --Updated some animations
+
 --Upgraded mouse cursor
+
 -04/04/2024
+
 --Upgrades to skillcard animations
+
 -03/04/2024
+
 --Slight changes to mobile and desktop layout of skills component
+
 -02/04/2024
+
 --Overall project Updated
+
