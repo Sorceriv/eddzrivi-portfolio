@@ -20,7 +20,7 @@ function NavBar({hamburgerActive}: Props) {
 
   return (
       <> 
-          <nav className="nav-bar">
+          <nav id="nav-bar" className="nav-bar">
             <span className="logo"><a href="#">EDDZRIVI</a></span>  
             <ul className="items">
               <li><a href="#hero">Home</a></li>

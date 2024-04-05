@@ -95,7 +95,7 @@ function Skills({onMouseEnter, onMouseLeave}: Props) {
                 <div className="text-section">
                     <h1 className="skills-title">Skill & Tool Set</h1>
                     <div className="text-section-right">
-                        <h3>Tools and technologies are the guns and ammos of developers. I like building stuff and here are some of the guns and ammos I use.</h3>
+                        <span>Tools and technologies are the guns and ammos of developers. I like building stuff and here are some of the guns and ammos I use.</span>
                         <div className="skills-buttons">
                             <button onClick={leftButton}>←</button>
                             <button onClick={rightButton}>→</button>

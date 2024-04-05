@@ -5,9 +5,10 @@ import PreLoader from "./components/PreLoader/PreLoader";
 import NavBar from "./components/NavBar/NavBar";
 import Hero from "./components/Hero/Hero";
 import Skills from "./components/Skills/Skills";
+import Projects from "./components/Projects/Projects";
 
-import { animate, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { animate, motion, useScroll } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 import './App.scss';
 
@@ -36,6 +37,7 @@ function App() {
       x: `${x - size/2}px`,
       y: `${y - size/2}px`,
       backgroundColor: "",
+      boxShadow: "0px 0px 100px 10px var(--text-color)",
     },
     text: {
       height: 150,
@@ -49,7 +51,7 @@ function App() {
       x: `${x - size/2}px`,
       y: `${y - size/2}px`,
       backgroundColor: "var(--background-color)",
-      TransitionEvent: 5,
+      boxShadow: "0px 0px 100px 10px var(--text-color-inverse)",
     }
   }
 
@@ -72,28 +74,36 @@ function App() {
     }
   },[hamburgerActive])
 
+  /*Scroll Handler*/
+  const container = useRef(null);
+  const {scrollYProgress} = useScroll({
+    target: container,
+    offset: ['start start', 'end end']
+  })
+
   //
   
 
   return (
     <>
       <PreLoader onLoaded={preLoaded}/>
-      <div className="main-container">
-        <motion.div 
+      <motion.div 
           className="custom-cursor"
           variants={variants}
           animate={cursorVariant}
           transition={{
-            type: "tween",
-            duration: 0.5,
+            type: "spring",
+            //duration: 0,
+            //delay: 0,
             ease: "backOut",
           }}
         >
-        </motion.div>
-
+      </motion.div>
+      <div ref={ container } className="main-container">
         <NavBar hamburgerActive={onHamburgerActive}/>
-        <Hero onMouseEnter={textEnter} onMouseLeave={cursorLeave}/>
+        <Hero onMouseEnter={textEnter} onMouseLeave={cursorLeave} progress={scrollYProgress} range={[0.05, 0.2]} targetScale={0.9}/>
         <Skills onMouseEnter={skillEnter} onMouseLeave={cursorLeave}/>
+        <Projects />
       </div>
     </>
     

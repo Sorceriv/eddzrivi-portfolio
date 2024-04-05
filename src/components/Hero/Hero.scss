@@ -1,8 +1,8 @@
 .hero-section {
     padding: 0px var(--padding) var(--padding) var(--padding);
     height: calc(100vh - 150px); //800px
-    
-    
+    transition: 0.5s;
+    color: var(--text-color);
     //flex-direction: column;
     
     .container-section {
@@ -22,7 +22,7 @@
             //text-align: center;
             //background-color: red;
             
-            text {
+            h1 {
                 //background-color: blue;
                 //margin: auto;
 
@@ -35,11 +35,12 @@
                 display: block;
             }
             
-            text:nth-child(1) {
+            h1:nth-child(1) {
                 font-size: var(--subheader-font-size);
                 color: transparent;
                 -webkit-text-stroke-width: 1px;
                 -webkit-text-stroke-color: var(--text-color);
+                
                 //font-weight: 500;
             }
         }
@@ -96,11 +97,20 @@
 //Fix mouse cursor mechanics, hide on mobile view, fix lagging (DONE except lagging, check in live site)
 //Await loading animation before playing entrance animations, put all animations in functions for await call in app(?) (DONE)
 //position fixed of hamburger onclick (maybe set body position to fixed if navbar open) (DONE)
-//Fix slider of skills, arrows, and its layout including mobile (CURRENTLY AT LAYOUTS, ALIGN SKILL&TOOLSET AND TOOLS AND TECHNOLOGIES, REMOVE LINE HEIGHT OF BIG FONTS) (DONE EXCEPT ARROWS CHANGE UGLY ARROWS TO SVG)
-//Fix scroll animations (Currently: https://www.youtube.com/watch?v=am0ZueQmpzg)
 //Hidden overflow x for mousecursor to be hidden not scroll on page when going beyond x axis (DONE)
+
+//For 05/04/2024 EDDZ:
+//Projects section start (IN PROGRESS, UPGRADE THIS)
+
+//FOR 06/04/2024 EDDZ:
+//Contacts section start
+//Skills skillcards drag text in cursor on hover (?)
+//Fix slider of skills, arrows, and its layout including mobile (CURRENTLY AT LAYOUTS, ALIGN SKILL&TOOLSET AND TOOLS AND TECHNOLOGIES, REMOVE LINE HEIGHT OF BIG FONTS) (DONE EXCEPT ARROWS CHANGE UGLY ARROWS TO SVG)
+//Fix scroll animations (Currently: https://www.youtube.com/watch?v=am0ZueQmpzg) (IN PROGRESS, CURRENTLY AT SMOOTH SCROLL. AND THEN DO HAMBURGER APPEARS AND LIGHTORDARKMODE)
+//Drag text on cursor when hovering skill cards(?)
 //Fix hamburger menu onclick animation go to section of page
 //fix styles to  be responsive! specially hero section think of idea then make it resposnive at all sizes (vw optimization) then add entry animations then add hamburger on scroll
+//Fix zoomout layout and cursor following on zoomout
 
 
 @media (min-width: 768px) {
@@ -113,13 +123,13 @@
 
             .text-section {
               
-                text {
+                h1 {
                     font-size: var(--header-font-size);
                     width: 75%;
                     margin: auto;
                 }
             
-                text:nth-child(1) {
+                h1:nth-child(1) {
                     font-size: var(--subheader-font-size);
                 }
             }
@@ -144,13 +154,13 @@
 
             .text-section {
        
-                text {
+                h1 {
                     font-size: var(--header-font-size);
                     width: 75%;
                     margin: auto;
                 }
             
-                text:nth-child(1) {
+                h1:nth-child(1) {
                     font-size: var(--subheader-font-size);
                 }
             }
