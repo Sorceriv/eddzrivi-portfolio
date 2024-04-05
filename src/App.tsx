@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar/NavBar";
 import Hero from "./components/Hero/Hero";
 import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
+import Contact from "./components/Contact/Contact";
 
 import { animate, motion, useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
@@ -104,6 +105,7 @@ function App() {
         <Hero onMouseEnter={textEnter} onMouseLeave={cursorLeave} progress={scrollYProgress} range={[0.05, 0.2]} targetScale={0.9}/>
         <Skills onMouseEnter={skillEnter} onMouseLeave={cursorLeave}/>
         <Projects />
+        <Contact />
       </div>
     </>
     

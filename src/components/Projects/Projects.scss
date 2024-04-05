@@ -17,7 +17,7 @@
             position: relative;
             
             .description-section {
-                padding: var(--header-font-size) var(--subheader-font-size) var(--header-font-size) var(--subheader-font-size);
+                padding: calc(var(--header-font-size)) var(--padding) calc(var(--header-font-size) * 1.5) var(--padding);
                 background-color: var(--background-color);
                 display: flex;
                 flex-direction: column;
@@ -67,17 +67,19 @@
                     }
                     .description-links {
                         margin-left: auto;
+                        font-size: 14px;
                     }
                 }
             }
 
             .project-section {
-                padding: var(--header-font-size) var(--header-font-size) var(--header-font-size) var(--header-font-size);
+                padding: calc(var(--header-font-size)) var(--padding) calc(var(--header-font-size) * 1.5) var(--padding);
                 background-color: var(--background-color);
-                
                 
                 .project {
                     img {
+                        display: block;
+                        margin: auto;
                         background-color: grey;
                         height: 300px;
                         border-radius: 10px;
@@ -103,10 +105,11 @@
     
                 .description-section {
                     width: 50%;
+                    padding: calc(var(--header-font-size) * 1.5) var(--padding) calc(var(--header-font-size) * 1.5) var(--padding) ;
                     .description-container {
    
                         .project-title {
-                      
+                            margin-top: -10px;
                         }
     
                         .project-title::after {
@@ -132,12 +135,12 @@
     
                 .project-section {
                     width: 50%;
-                    
+                    padding: calc(var(--header-font-size) * 1.5) var(--padding) calc(var(--header-font-size) * 1.5) var(--padding) ;
                    
                     .project {
                         img {
-                            height: 400px;
-                            width: 500px;
+                            max-height: 500px;
+                            max-width: 500px;
                         }
                     }
                     margin-bottom: 0px;
@@ -160,10 +163,11 @@
     
                 .description-section {
                     width: 50%;
+                    padding: calc(var(--header-font-size) * 1.5) var(--padding) calc(var(--header-font-size) * 1.5) var(--padding);
                     .description-container {
 
                         .project-title {
-                      
+                            margin-top: -15px;
                         }
     
                         .project-title::after {
@@ -188,12 +192,12 @@
     
                 .project-section {
                     width: 50%;
-                    
+                    padding: calc(var(--header-font-size) * 1.5) var(--padding) calc(var(--header-font-size) * 1.5) var(--padding);
                    
                     .project {
                         img {
-                            height: 400px;
-                            width: 500px;
+                            max-height: 500px;
+                            max-width: 500px;
                         }
                     }
                 }

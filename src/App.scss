@@ -86,7 +86,7 @@ body {
   width: 100%;
 }
 
-p, span, text, li, a, h3, h5, h6 {
+p, span, text, li, a, h3, h5, h6, input, label {
   font-family: var(--secondary-font);
 }
 
@@ -105,6 +105,10 @@ Layers of z-index:
 a {
   color: inherit;
   text-decoration: none;
+}
+
+input {
+  all: unset;
 }
 
 a:visited {
@@ -175,6 +179,12 @@ body::-webkit-scrollbar-thumb {
   }
 
   #projects {
+    position: relative;
+    z-index: 1;
+    background-color: var(--background-color);
+  }
+
+  #contact {
     position: relative;
     z-index: 1;
     background-color: var(--background-color);
