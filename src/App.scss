@@ -60,7 +60,7 @@
   --inverse-color: 0%;
   --background-color: #121212;
   --theme-color: #e792a3;
-  //transition: 0.5s;
+  transition: 0.5s;
 }
 
 [data-theme="light"] {
@@ -69,7 +69,7 @@
   --inverse-color: 100%;
   --background-color: #ece8e1;
   --theme-color: #DC143C;
-  //transition: 0.5s;
+  transition: 0.5s;
 }
 
 html {

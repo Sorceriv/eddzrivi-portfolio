@@ -16,7 +16,7 @@ export default function Hero({onMouseEnter, onMouseLeave, progress, range, targe
                         <h1 onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>Eduardo Villanueva</h1>
                     </div>
                     <div className="image-section">
-                        <img src={ picture }/>
+                        <img src={ picture } alt="loading..."/>
                     </div>
                     <div className="sub-text-section">
                         <text>Available - <br></br>Let's work together!</text>
