@@ -54,18 +54,18 @@ function PreLoader({onLoaded}: Props) {
         await animate(scope.current, { opacity: 1, zIndex: 100, }, {delay: 1});
         await animate(".disappear", { y: "-20%", color: "rgba(0,0,0,0)" }, { delay: stagger(0.05)});
         
-        animate("#E", { x: "29.5vw", }, { type: "tween" });
-        animate("#D", { x: "29.5vw", }, { type: "tween" });
-        animate("#R", { x: "14.5vw", }, { type: "tween" });
-        animate("#I", { x: "14.5vw", }, { type: "tween" });
-        animate("#V", { x: "-1.5vw", }, { type: "tween" });
-        await animate("#I-1", { x: "-1.5vw", }, { type: "tween" });
+        animate("#E", { x: "30vw", }, { type: "tween" });
+        animate("#D", { x: "30vw", }, { type: "tween" });
+        animate("#R", { x: "15.3vw", }, { type: "tween" });
+        animate("#I", { x: "15.3vw", }, { type: "tween" });
+        animate("#V", { x: "-1vw", }, { type: "tween" });
+        await animate("#I-1", { x: "-1vw", }, { type: "tween" });
         animate("#DZ", { position: "absolute", });
         await animate("#DZ", { display: "inline", opacity: 1, }, { delay: 0.5, duration: 0.5});
 
-        await animate(scope.current, { opacity: 0, }, {delay: 0.5});
-        await animate(scope.current, { transitionEnd: { display: "none", zIndex: -100 } }, {});
-        await onLoaded();
+        // await animate(scope.current, { opacity: 0, }, {delay: 0.5});
+        // await animate(scope.current, { transitionEnd: { display: "none", zIndex: -100 } }, {});
+        // await onLoaded();
     }
     useEffect(()=> {
         setVisible(true);
