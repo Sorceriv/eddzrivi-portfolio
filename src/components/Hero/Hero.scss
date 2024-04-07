@@ -47,6 +47,7 @@
 
         .image-section {
             //background-color: red;
+            display: none;
             margin-top: -75px;
             position: relative;
             //z-index: 0;
@@ -108,9 +109,11 @@
 
 //FOR 07/04/2024 EDDZ:
 //Fix preloader mobile view make it more responsive to all
+//Fix custom cursor delaying preloader maybe use sequence instead of async then remove onpload useeffect conditions except for fixed position maybe (DONE, [] on useeffect on preloader was cause)
 //FIX CUSTOM CURSOR LAGGING !IMPORTANT! (LAGS WHEN MOUSE STILL MOVES PROBABLY ANIMATION WONT OVERRIDE EVERYTIME MOUSE MOVES) (DONE! LAGS BECAUSE OF ANIMATION SPRING)
 //Footer section start 
-//Skills skillcards drag text in cursor on hover (?)
+//Change <text> elements to <span> elements
+//Skills skillcards drag text in cursor on hover (?) use this:  https://codesandbox.io/p/sandbox/custom-cursor-with-framer-motion-n6i55?file=%2Fsrc%2Findex.js%3A102%2C28-102%2C38
 //Fix slider of skills, arrows, and its layout including mobile (CURRENTLY AT LAYOUTS, ALIGN SKILL&TOOLSET AND TOOLS AND TECHNOLOGIES, REMOVE LINE HEIGHT OF BIG FONTS) (DONE EXCEPT ARROWS CHANGE UGLY ARROWS TO SVG)
 //Fix scroll animations (Currently: https://www.youtube.com/watch?v=am0ZueQmpzg) (IN PROGRESS, CURRENTLY AT SMOOTH SCROLL. AND THEN DO HAMBURGER APPEARS AND LIGHTORDARKMODE)
 //Drag text on cursor when hovering skill cards(?)
@@ -142,7 +145,7 @@
                 }
             }
             .image-section {
-     
+                display: block;
                 img {
                     margin: auto;
                     width: 20vw;
@@ -173,7 +176,7 @@
                 }
             }
             .image-section {
-              
+                display: block;
                 img {
                     margin: auto;
                     border-radius: 15px;

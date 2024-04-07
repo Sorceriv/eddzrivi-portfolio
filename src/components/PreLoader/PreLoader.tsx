@@ -54,12 +54,12 @@ function PreLoader({onLoaded}: Props) {
         await animate(scope.current, { opacity: 1, zIndex: 100, }, {delay: 1});
         await animate(".disappear", { y: "-20%", color: "rgba(0,0,0,0)" }, { delay: stagger(0.05)});
         
-        animate("#E", { x: "1000%", }, { type: "tween" });
-        animate("#D", { x: "725%", }, { type: "tween" });
-        animate("#R", { x: "400%", }, { type: "tween" });
-        animate("#I", { x: "1000%", }, { type: "tween" });
-        animate("#V", { x: "-75%", }, { type: "tween" });
-        await animate("#I-1", { x: "-195%", }, { type: "tween" });
+        animate("#E", { x: "25.5vw", }, { type: "tween" });
+        animate("#D", { x: "25.5vw", }, { type: "tween" });
+        animate("#R", { x: "12vw", }, { type: "tween" });
+        animate("#I", { x: "12.3vw", }, { type: "tween" });
+        animate("#V", { x: "-2.5vw", }, { type: "tween" });
+        await animate("#I-1", { x: "-2.3vw", }, { type: "tween" });
         animate("#DZ", { position: "absolute", });
         await animate("#DZ", { display: "inline", opacity: 1, }, { delay: 0.5, duration: 0.5});
 
@@ -70,7 +70,7 @@ function PreLoader({onLoaded}: Props) {
     useEffect(()=> {
         setVisible(true);
         handleEnterAnimate();
-    });
+    }, []);
 
     //!IMPORTANT!
     //24/03/2024 me: Clean code (specifically animation, find a way to remove percentages), fix error when saving multiple times due to scope not being detected(?) at display none error is maximum callback
@@ -99,7 +99,7 @@ function PreLoader({onLoaded}: Props) {
                             
                             <motion.span id="E" style={{}} variants={child}>E</motion.span>
                             <motion.span id="D" style={{}} variants={child}>D</motion.span>
-                            <motion.span id="DZ" initial={{ opacity: 0, display: "none", left: "44.9%",}}>DZ</motion.span>
+                            <motion.span id="DZ" initial={{ opacity: 0, display: "none", left: "44.9vw",}}>DZ</motion.span>
                             <motion.span className="disappear" style={{}} variants={child}>U</motion.span>
                             <motion.span className="disappear" style={{}} variants={child}>A</motion.span>
                             <motion.span className="disappear" style={{}} variants={child}>R</motion.span>

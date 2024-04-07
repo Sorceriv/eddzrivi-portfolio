@@ -7,11 +7,12 @@ interface Props {
 const useMousePosition = ({preLoaderLoaded}: Props) => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-    const updateMousePosition = (e: any) => {
+    const updateMousePosition = async (e: any) => {
         setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
     useEffect(() => {
+        
         if(preLoaderLoaded) {
             window.addEventListener("mousemove", updateMousePosition);
 
