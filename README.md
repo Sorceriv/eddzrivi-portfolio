@@ -30,10 +30,13 @@ export default {
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
 Update Logs:
+-07/04/2024
+
+--Fixed cursor lag
 
 -06/04/2024
 
---
+--Minor upgrades
 
 -05/04/2024
 
