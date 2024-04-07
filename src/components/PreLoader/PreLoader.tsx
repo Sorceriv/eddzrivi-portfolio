@@ -54,12 +54,12 @@ function PreLoader({onLoaded}: Props) {
         await animate(scope.current, { opacity: 1, zIndex: 100, }, {delay: 1});
         await animate(".disappear", { y: "-20%", color: "rgba(0,0,0,0)" }, { delay: stagger(0.05)});
         
-        animate("#E", { x: "25.5vw", }, { type: "tween" });
-        animate("#D", { x: "25.5vw", }, { type: "tween" });
-        animate("#R", { x: "12vw", }, { type: "tween" });
-        animate("#I", { x: "12.3vw", }, { type: "tween" });
-        animate("#V", { x: "-2.5vw", }, { type: "tween" });
-        await animate("#I-1", { x: "-2.3vw", }, { type: "tween" });
+        animate("#E", { x: "29.5vw", }, { type: "tween" });
+        animate("#D", { x: "29.5vw", }, { type: "tween" });
+        animate("#R", { x: "14.5vw", }, { type: "tween" });
+        animate("#I", { x: "14.5vw", }, { type: "tween" });
+        animate("#V", { x: "-1.5vw", }, { type: "tween" });
+        await animate("#I-1", { x: "-1.5vw", }, { type: "tween" });
         animate("#DZ", { position: "absolute", });
         await animate("#DZ", { display: "inline", opacity: 1, }, { delay: 0.5, duration: 0.5});
 
