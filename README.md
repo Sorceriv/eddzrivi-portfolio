@@ -34,6 +34,8 @@ Update Logs:
 
 --Fixed cursor lag
 
+--Somewhat fixed preloader layout on mobile
+
 -06/04/2024
 
 --Minor upgrades
