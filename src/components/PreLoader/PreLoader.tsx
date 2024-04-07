@@ -63,9 +63,9 @@ function PreLoader({onLoaded}: Props) {
         animate("#DZ", { position: "absolute", });
         await animate("#DZ", { display: "inline", opacity: 1, }, { delay: 0.5, duration: 0.5});
 
-        // await animate(scope.current, { opacity: 0, }, {delay: 0.5});
-        // await animate(scope.current, { transitionEnd: { display: "none", zIndex: -100 } }, {});
-        // await onLoaded();
+        await animate(scope.current, { opacity: 0, }, {delay: 0.5});
+        await animate(scope.current, { transitionEnd: { display: "none", zIndex: -100 } }, {});
+        await onLoaded();
     }
     useEffect(()=> {
         setVisible(true);
