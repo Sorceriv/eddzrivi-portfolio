@@ -30,9 +30,11 @@ function App() {
 
   /*Custom Cursor*/
   const { x, y } = useMousePosition({preLoaderLoaded: pLoaded});
+  
+
   const [cursorVariant, setCursorVariant] = useState("default");
   const size = 20;
-  
+
   const variants : Variants = {
     default: {
       x: `${x - size/2}px`,
@@ -93,10 +95,11 @@ function App() {
           variants={variants}
           animate={cursorVariant}
           transition={{
-            type: "spring",
+            type: "tween",
             //duration: 0,
             //delay: 0,
             ease: "backOut",
+            //duration: 0.2,
           }}
         >
       </motion.div>

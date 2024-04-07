@@ -43,11 +43,11 @@ function Skills({onMouseEnter, onMouseLeave}: Props) {
 
     useEffect(() => {
         const observer = new ResizeObserver(() => {
-            //console.log("Testt");
+            console.log("Titing malaki");
             setCarouselWidth(scope.current.scrollWidth - scope.current.offsetWidth);
-            setLeft(0); //Sets left upon resize of screen to avoid design bug on screen resize
         });
         observer.observe(scope.current);
+        setLeft(0); //Sets left upon resize of screen to avoid design bug on screen resize
         return () => scope.current && observer.unobserve(scope.current);
     }, [carouselWidth])
 
