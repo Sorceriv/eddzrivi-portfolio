@@ -1,5 +1,5 @@
-'use client';
-import useMousePosition from "./utils/useMousePosition";
+//'use client';
+//import useMousePosition from "./utils/useMousePosition";
 import useMouse from "@react-hook/mouse-position";
 
 import PreLoader from "./components/PreLoader/PreLoader";
