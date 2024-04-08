@@ -8,6 +8,7 @@ import Hero from "./components/Hero/Hero";
 import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 
 import { animate, motion, useScroll, Variants } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
@@ -134,6 +135,7 @@ function App() {
           <Skills onMouseEnter={skillEnter} onMouseLeave={cursorLeave}/>
           <Projects />
           <Contact />
+          <Footer />
         </div>
       </>
       

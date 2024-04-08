@@ -74,7 +74,7 @@
 
 .nav-bar-mobile {
     z-index: -1;
- 
+    font-family: "Sora";
     position: fixed;
     display: flex;
     bottom: 0;
@@ -91,8 +91,7 @@
         position: absolute;
         left: 15%;
         font-size: 11vw;
-        font-weight: 900;
-        
+        font-weight: 100;
 
         svg {
             width: 5vw;

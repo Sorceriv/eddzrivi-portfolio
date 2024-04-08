@@ -179,15 +179,25 @@ body::-webkit-scrollbar-thumb {
   }
 
   #projects {
+    // margin-top: 100px;
     position: relative;
     z-index: 1;
     background-color: var(--background-color);
   }
 
   #contact {
+    // margin-top: 100px;
+    // margin-bottom: 150px;
     position: relative;
     z-index: 1;
     background-color: var(--background-color);
+  }
+
+  #footer {
+    margin-top: 100px;
+    position: relative;
+    z-index: 1;
+    background-color: black;
   }
 }
 

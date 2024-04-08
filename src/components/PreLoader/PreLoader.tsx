@@ -61,9 +61,9 @@ function PreLoader({onLoaded}: Props) {
         animate("#V", { x: "-1vw", }, { type: "tween" });
         await animate("#I-1", { x: "-1vw", }, { type: "tween" });
         animate("#DZ", { position: "absolute", });
-        await animate("#DZ", { display: "inline", opacity: 1, }, { delay: 0.5, duration: 0.5});
+        await animate("#DZ", { display: "inline", opacity: 1, }, { delay: 0.25, duration: 0.5});
 
-        await animate(scope.current, { opacity: 0, }, {delay: 0.5});
+        await animate(scope.current, { opacity: 0, }, {delay: 0.25});
         await animate(scope.current, { transitionEnd: { display: "none", zIndex: -100 } }, {});
         await onLoaded();
     }
