@@ -13,23 +13,23 @@ function Skills({onMouseEnter, onMouseLeave}: Props) {
     const skills_array = [
         {
             title: "HTML & CSS",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet leo a tellus molestie, non ornare orci semper.",
+            text: "HyperText Markup Language and Cascading Style Sheets are two of the main technologies I use in building a website, they are respectively for structure and design.",
         },
         {
-            title: "Javascript",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet leo a tellus molestie, non ornare orci semper.",
+            title: "JavaScript",
+            text: "JavaScript is the programming language that I use to make a website more dynamic. When I need advanced transitions and manual control of the DOM, I use JS and its libraries.",
         },
         {
             title: "ReactJS",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet leo a tellus molestie, non ornare orci semper.",
+            text: "A JS library mainly used for front-end development. I use it so that I do not need to touch the DOM that much. Everything is done through components.",
         },
         {
             title: "Java",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet leo a tellus molestie, non ornare orci semper.",
+            text: "Java is a general programming language that mainly uses the OOP approach. I mainly use this on software development when I want to take the OOP approach.",
         },
         {
             title: "C++",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet leo a tellus molestie, non ornare orci semper.",
+            text: "C++ is another multi-paradigm programming language I mainly use for software engineering. I use this when I need to build small-projects such as calculators.",
         },
     ];
 

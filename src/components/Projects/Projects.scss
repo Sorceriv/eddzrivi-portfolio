@@ -77,12 +77,15 @@
                 background-color: var(--background-color);
                 
                 .project {
+                    display: block;
+                    margin: auto;
+                    background-color: grey;
+                    height: 300px;
+                    border-radius: 10px;
+                    background-size: cover;
+                    background-position: bottom;
                     img {
-                        display: block;
-                        margin: auto;
-                        background-color: grey;
-                        height: 300px;
-                        border-radius: 10px;
+                        
                     }
                 }
                 margin-bottom: 100px;
