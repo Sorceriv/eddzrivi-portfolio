@@ -34,6 +34,8 @@ Update Logs:
 
 --Added Pharmascanner Project content
 
+--Added resume download option on mobile navbar, currently fixing mobile navbar
+
 -08/04/2024
 
 --Footer section started
