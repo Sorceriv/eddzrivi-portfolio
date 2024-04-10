@@ -32,10 +32,10 @@ export default function Projects() {
                             </div>
                             <div className="contact-link">
                                 <h3>My Socials</h3>
-                                <span><a href="#">LinkedIn</a></span>
-                                <span><a href="#">GitHub</a></span>
-                                <span><a href="#">HackerRank</a></span>
-                                <span><a href="#">Facebook</a></span>
+                                <span><a href="https://www.linkedin.com/in/eddzrivi/" target="_blank">LinkedIn</a></span>
+                                <span><a href="https://github.com/Sorceriv" target="_blank">GitHub</a></span>
+                                <span><a href="https://www.hackerrank.com/profile/eduardovillanue2" target="_blank">HackerRank</a></span>
+                                <span><a href="https://www.facebook.com/eddzrivi/" target="_blank">Facebook</a></span>
                             </div>
                         </div>
                     </div>

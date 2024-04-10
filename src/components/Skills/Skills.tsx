@@ -24,6 +24,10 @@ function Skills({onMouseEnter, onMouseLeave}: Props) {
             text: "A JS library mainly used for front-end development. I use it so that I do not need to touch the DOM that much. Everything is done through components.",
         },
         {
+            title: "Python",
+            text: "Python is an intepreted programming language which I mainly use for Data Analytics and AI, mainly using its Pandas, Numpy, and Keras libraries. I also use it for API creation using Flask.",
+        },
+        {
             title: "Java",
             text: "Java is a general programming language that mainly uses the OOP approach. I mainly use this on software development when I want to take the OOP approach.",
         },

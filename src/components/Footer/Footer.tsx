@@ -12,9 +12,9 @@ function Footer() {
                     <span>Copyright &copy; {new Date().getFullYear()}</span>
                 </div>
                 <div className="links">
-                    <span className="link"><a href="#">LinkedIn</a></span>
-                    <span className="link"><a href="#">GitHub</a></span>
-                    <span className="link"><a href="#">HackerRank</a></span>
+                    <span className="link"><a href="https://www.linkedin.com/in/eddzrivi/" target="_blank">LinkedIn</a></span>
+                    <span className="link"><a href="https://github.com/Sorceriv" target="_blank">GitHub</a></span>
+                    <span className="link"><a href="https://www.hackerrank.com/profile/eduardovillanue2" target="_blank">HackerRank</a></span>
                 </div>
                 <div className="social-links">
                     <span className="link"><a href="#skills">Skills</a></span>
