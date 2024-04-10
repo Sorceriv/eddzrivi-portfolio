@@ -35,6 +35,8 @@ Update Logs:
 
 --Updated custom domain, migrated this site.
 
+--Added some content (links ref and skill)
+
 -09/04/2024
 
 --Added Pharmascanner Project content
