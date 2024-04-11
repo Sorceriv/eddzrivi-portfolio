@@ -2,9 +2,9 @@ import resume from "../../assets/resume.pdf";
 
 import Hamburger from "./Hamburger";
 import ModeToggle from "./ModeToggle";
-import { useAnimate } from "framer-motion";
+import { useAnimate, useInView } from "framer-motion";
 import  './NavBar.scss'
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface Props {
   setCursor: () => void;
@@ -12,6 +12,7 @@ interface Props {
 }
 
 function NavBar({setCursor, hamburgerActive}: Props) {
+  /*For hamburger*/
   const [visible, setVisible] = useState(false);
   const [scope, animate] = useAnimate();
   useEffect(() => {
@@ -21,11 +22,22 @@ function NavBar({setCursor, hamburgerActive}: Props) {
     console.log(visible);
   }, [visible]);
 
+  /*For inView animations */
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    amount: "all",
+  });
+
+  useEffect(() => {
+    console.log(`The element ${isInView ? "is" : "is NOT"} in view`);
+    //Maybe check if preloader is loaded(?) another approach is to remove components in view while preloader is not loaded https://stackoverflow.com/questions/40987309/react-display-loading-screen-while-dom-is-rendering
+  }, [isInView])
+
   return (
       <> 
           <nav id="nav-bar" className="nav-bar">
             <span className="logo"><a href="#">EDDZRIVI</a></span>  
-            <ul className="items">
+            <ul ref={ref} className="items">
               <li><a href="#hero">Home</a></li>
               <li><a href="#skills">Skills</a></li>
               <li><a href="#projects">Projects</a></li>

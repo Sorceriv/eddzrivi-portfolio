@@ -130,26 +130,38 @@
 //Test different colors/layouts (IN PROGRESS)
 
 //For 11/04/2024 EDDZ:
-//Scroll and after preloader/onload transitions
-//Mobile navbar functionality
+//Scroll and after preloader/onload transitions/animations (IN PROGRESS in navbar.tsx https://www.youtube.com/watch?v=PczQ0qSwe1E)
 //Add content and icons (IN PROGRESS)
+//Fix preloader font rendering as times new roman on load (IN PROGRESS TRY ARIAL BLACK FALLBACK)
+//Contact form fix functionality (Send Email) (DONE used action="https://formsubmit.co/your@email.com" method="POST formsubmit")
 //Cleaned cursor event code, used one function with arguments instead of multiple functions (DONE)
 //Test different colors/layouts (IN PROGRESS)
-//Cursor text (IN PROGRESS)
-//Change cursor color on footer
-//Fix project image to be better layout and more responsive
+//Cursor text (DONE)
+//Change cursor color on footer (DONE)
+//Fix slider of skills, arrows, and its layout including mobile (CURRENTLY AT LAYOUTS, ALIGN SKILL&TOOLSET AND TOOLS AND TECHNOLOGIES, REMOVE LINE HEIGHT OF BIG FONTS) (DONE EXCEPT ARROWS CHANGE UGLY ARROWS TO SVG)
+//Fix scroll and basic animations (Currently: https://www.youtube.com/watch?v=am0ZueQmpzg) (IN PROGRESS, CURRENTLY AT SMOOTH SCROLL. AND THEN DO HAMBURGER APPEARS AND LIGHTORDARKMODE)
+//Migrate to eddzrivi.dev (IN PROGRESS)
+
+//For 12/04/2024 EDDZ:
+//Scroll and after preloader/onload transitions/animations (IN PROGRESS in navbar.tsx https://www.youtube.com/watch?v=PczQ0qSwe1E)
+//Mobile navbar functionality
+//Add content and icons (IN PROGRESS)
 //Fix preloader font rendering as times new roman on load (IN PROGRESS TRY ARIAL BLACK FALLBACK)
+//Fix mouse position after preloader load
+//Fix overall layout (Ex. mobile navbar on zoomin cramped, mobile view should have more space so available and button is seen even with address bar below)
+//Github yt doc icons and text link onhover
+//Hide address ex. eddzrivi.dev/#skills hide #skills
+//Test different colors/layouts (IN PROGRESS)
+//Fix project image to be better layout and more responsive
 //Fonts preloader not loading before animating
 //Review contact layout (maybe stick right side to right side so padding matches and maybe looks better)
 //Fix contact form email
-//Fix overall layout
 //Change <text> elements to <span> elements
 //Add page animations
 //Add cursor animations
 //Hamburger and light/darkmode design
 //Placeholder for empty projects
 //Colors (add or remove match with pastel red)
-//Skills skillcards drag text in cursor on hover (?) use this:  https://codesandbox.io/p/sandbox/custom-cursor-with-framer-motion-n6i55?file=%2Fsrc%2Findex.js%3A102%2C28-102%2C38
 //Fix slider of skills, arrows, and its layout including mobile (CURRENTLY AT LAYOUTS, ALIGN SKILL&TOOLSET AND TOOLS AND TECHNOLOGIES, REMOVE LINE HEIGHT OF BIG FONTS) (DONE EXCEPT ARROWS CHANGE UGLY ARROWS TO SVG)
 //Fix scroll and basic animations (Currently: https://www.youtube.com/watch?v=am0ZueQmpzg) (IN PROGRESS, CURRENTLY AT SMOOTH SCROLL. AND THEN DO HAMBURGER APPEARS AND LIGHTORDARKMODE)
 //Cursor animations

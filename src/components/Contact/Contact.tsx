@@ -15,7 +15,7 @@ export default function Projects({onMouseEnter, onMouseLeave}: Props) {
                         <h1>Let's work together!</h1>
                     </div>
                     <div className="contact-form-container">
-                        <form className="contact-form">
+                        <form className="contact-form" action="https://formsubmit.co/9e6225a960db1a7a923e3b56c8453208" method="POST">
                             <div className="field-container">
                                 <label htmlFor="name">Your name?</label>
                                 <input placeholder="John Doe" name="name" type="text"></input>
