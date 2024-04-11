@@ -31,6 +31,12 @@ export default {
 
 Update Logs:
 
+-11/04/2024
+
+--Major mouse logic overhaul
+
+--Some design changes
+
 -10/04/2024
 
 --Updated custom domain, migrated this site.
