@@ -31,7 +31,13 @@ export default {
 
 Update Logs:
 
+-12/04/2024
+
+--
+
 -11/04/2024
+
+--Updated functionality of Contact Form
 
 --Major mouse logic overhaul
 
