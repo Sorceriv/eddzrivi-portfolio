@@ -13,7 +13,7 @@ export default function Hero({onMouseEnter, onMouseLeave, progress, range, targe
                 <motion.div style={{ scale, opacity }} className="container-section">
                     <div className="text-section">
                         <h1><s>Hello</s>, I am</h1>
-                        <h1 onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>Eduardo Villanueva</h1>
+                        <h1 onMouseEnter={() => {onMouseEnter("text", "");}} onMouseLeave={onMouseLeave}>Eduardo Villanueva</h1>
                     </div>
                     <div className="image-section">
                         <img src={ picture } alt="loading..."/>
@@ -22,7 +22,7 @@ export default function Hero({onMouseEnter, onMouseLeave, progress, range, targe
                         <text>Available - <br></br>Let's work together!</text>
                     </div>
                     <div className="sub-button-section">
-                        <a href="#skills">↓</a>
+                        <a onMouseEnter={() => {onMouseEnter("button", "")}} onMouseLeave={onMouseLeave} href="#skills">↓</a>
                     </div>
                 </motion.div>
             </div>

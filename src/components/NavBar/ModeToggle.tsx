@@ -1,7 +1,11 @@
 import { motion, MotionConfig } from "framer-motion";
 import { useState, useEffect } from "react";
 
-function ModeToggle() {
+interface Props {
+    setCursor: () => void,
+}
+
+function ModeToggle({setCursor}: Props) {
     const [active, setActive] = useState(false);
     const setDarkMode = () => {
         document.querySelector("body")?.setAttribute('data-theme', 'dark')
@@ -12,7 +16,8 @@ function ModeToggle() {
     }
     
     useEffect(() => {
-        active ? setLightMode() : setDarkMode()
+        active ? setLightMode() : setDarkMode();
+        setCursor();
     }, [active]); // <- add the count variable here
 
     return (

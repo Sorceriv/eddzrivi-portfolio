@@ -7,10 +7,11 @@ import  './NavBar.scss'
 import { useEffect, useState } from "react";
 
 interface Props {
+  setCursor: () => void;
   hamburgerActive: () => void;
 }
 
-function NavBar({hamburgerActive}: Props) {
+function NavBar({setCursor, hamburgerActive}: Props) {
   const [visible, setVisible] = useState(false);
   const [scope, animate] = useAnimate();
   useEffect(() => {
@@ -31,7 +32,7 @@ function NavBar({hamburgerActive}: Props) {
               <li><a href="#contact">Contact</a></li>
             </ul>
             <div className="toggles">
-              <ModeToggle/>
+              <ModeToggle setCursor={setCursor}/>
               <Hamburger onClickItem={() => {setVisible(!visible); hamburgerActive();}}/>
             </div>
           </nav>

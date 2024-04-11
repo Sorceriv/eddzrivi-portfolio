@@ -154,6 +154,15 @@ body::-webkit-scrollbar-thumb {
   pointer-events: none;
   display: none;
   box-shadow: 0px 0px 100px 10px var(--text-color);
+
+  .cursor-text {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    color: var(--text-color);
+    font-weight: 900;
+    //background-color: red;
+  }
 }
 
 
@@ -191,10 +200,10 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     z-index: 1;
     background-color: var(--background-color);
+    padding-bottom: calc(var(--padding) + 100px);
   }
 
   #footer {
-    margin-top: 100px;
     position: relative;
     z-index: 1;
     background-color: black;
@@ -204,7 +213,7 @@ body::-webkit-scrollbar-thumb {
 
 @media (min-width: 768px) {
   * {
-    //cursor: none!important;
+    cursor: none!important;
   }
 
   :root {

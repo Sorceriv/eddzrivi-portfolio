@@ -4,7 +4,7 @@ import { motion, useAnimate } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 interface Props {
-    onMouseEnter: () => void;
+    onMouseEnter: (cursorVariant: string, cursoText: string) => void;
     onMouseLeave: () => void;
 }
 
@@ -28,8 +28,44 @@ function Skills({onMouseEnter, onMouseLeave}: Props) {
             text: "Python is an intepreted programming language which I mainly use for Data Analytics and AI, mainly using its Pandas, Numpy, and Keras libraries. I also use it for API creation using Flask.",
         },
         {
+            title: "SQL",
+            text: "SQL is the programming language I use for databases. It is a relational database programming language.",
+        },
+        {
             title: "Java",
             text: "Java is a general programming language that mainly uses the OOP approach. I mainly use this on software development when I want to take the OOP approach.",
+        },
+        {
+            title: "PowerShell",
+            text: "It is a cross-platform scripting language which basically acts like a command-line. I mainly used this in fixing vulnerabilities and creating automation scripts.",
+        },
+        {
+            title: "Bash",
+            text: "Like Powershell, I used this in fixing vulnerabilities and creating automation scripts. Unlike PowerShell though, it is mostly available on Linux.",
+        },
+        {
+            title: "Sass",
+            text: "Is a CSS preprocessor which makes CSS more readable and easier to use. I mainly use this instead of css due to easier readablity of styles due to nesting.",
+        },
+        {
+            title: "Azure",
+            text: "Azure is my main cloud technology. It is a cloud platform offered by Microsoft. Currenty, I have the AZ-900 and AI-900 certifications.",
+        },
+        {
+            title: "TypeScript",
+            text: "TS is a framework of JavaScript which makes the code more readable and less-prone to bugs. It is basically defined as JavaScript with syntax for types.",
+        },
+        {
+            title: "PHP",
+            text: "PHP is a server-side programming language which I mainly use for communication between the front-end and SQL",
+        },
+        {
+            title: "Git",
+            text: "Git is a tool used for source code management. I mainly use it on GitHub for version control.",
+        },
+        {
+            title: "Jira",
+            text: "Jira is a project management tool to make company processes more efficient. It is used in two of the companies I interned in.",
         },
         {
             title: "C++",
@@ -100,8 +136,8 @@ function Skills({onMouseEnter, onMouseLeave}: Props) {
                     <div className="text-section-right">
                         <span>Tools and technologies are the guns and ammos of developers. I like building stuff and here are some of the guns and ammos I use.</span>
                         <div className="skills-buttons">
-                            <button onClick={leftButton}>←</button>
-                            <button onClick={rightButton}>→</button>
+                            <button onMouseEnter={() => {onMouseEnter("button", "")}} onMouseLeave={onMouseLeave} onClick={leftButton}>←</button>
+                            <button onMouseEnter={() => {onMouseEnter("button", "")}} onMouseLeave={onMouseLeave} onClick={rightButton}>→</button>
                         </div>
                     </div>
                 </div>

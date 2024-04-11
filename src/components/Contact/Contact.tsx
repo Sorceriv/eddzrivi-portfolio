@@ -1,6 +1,11 @@
 import  './Contact.scss'
 
-export default function Projects() {
+interface Props {
+    onMouseEnter: (cursorVariant: string, cursorText: string) => void,
+    onMouseLeave: () => void
+}
+
+export default function Projects({onMouseEnter, onMouseLeave}: Props) {
     return (
         <> 
             <div id="contact" className="contact-section">
@@ -23,7 +28,7 @@ export default function Projects() {
                                 <label htmlFor="message">Your message?</label>
                                 <input placeholder="Hi, let's work together! How can we get started?" name="message" type="text"></input>
                             </div>
-                            <input id="submit-contact" type="submit" value="Submit" />
+                            <input onMouseEnter={() => {onMouseEnter("button", "")}} onMouseLeave={onMouseLeave} id="submit-contact" type="submit" value="Submit" />
                         </form>
                         <div className="contact-links">
                         <div className="contact-link">

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 interface Props {
     title: String;
     text: String;
-    onMouseEnter: () => void;
+    onMouseEnter: (cursorVariant: string, cursorText: string) => void;
     onMouseLeave: () => void;
 }
 
@@ -17,7 +17,7 @@ function Skill({title, text, onMouseEnter, onMouseLeave}: Props) {
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 //whileTap={{ rotate: 1 }} 
                 className="skill" 
-                onMouseEnter={onMouseEnter} 
+                onMouseEnter={() => {onMouseEnter("skillCard", "Drag Me")}} 
                 onMouseLeave={onMouseLeave}
             >
                 <div className="skill-image">

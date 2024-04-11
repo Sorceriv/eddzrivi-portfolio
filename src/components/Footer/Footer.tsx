@@ -1,11 +1,14 @@
 import  './Footer.scss'
 
-function Footer() {
-  
+interface Props {
+    onMouseEnter: (cursorVariant: string, cursorText: string) => void,
+    onMouseLeave: () => void,
+}
 
+function Footer({onMouseEnter, onMouseLeave}: Props) {
   return (
       <> 
-        <div id="footer" className="footer-section">
+        <div onMouseEnter={() => {onMouseEnter("footer", "")}} onMouseLeave={onMouseLeave} id="footer" className="footer-section">
             <div className="footer-container">
                 <div className="logo-container">
                     <h1 className="logo">EDDZRIVI</h1>
@@ -18,7 +21,7 @@ function Footer() {
                 </div>
                 <div className="social-links">
                     <span className="link"><a href="#skills">Skills</a></span>
-                    <span className="link"><a href="#projects">Project</a></span>
+                    <span className="link"><a href="#projects">Projects</a></span>
                     <span className="link"><a href="#contact">Contact</a></span>
                 </div>
                 <div className="extra-details">

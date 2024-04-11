@@ -44,7 +44,7 @@ function App() {
 
     let x: number | null = currX;
     let y: number | null = currY;
-    console.log(mouse);
+    //console.log(mouse);
     
 
     useEffect(() => {
@@ -63,12 +63,21 @@ function App() {
 
     const variants : Variants = {
       default: {
+        opacity: 1,
+        x: `${x as any - size/2}px`,
+        y: `${y as any - size/2}px`,
+        backgroundColor: "var(--text-color)",
+        boxShadow: "0px 0px 100px 10px var(--text-color)",
+      },
+      reset: {
+        opacity: 1,
         x: `${x as any - size/2}px`,
         y: `${y as any - size/2}px`,
         backgroundColor: "",
         boxShadow: "0px 0px 100px 10px var(--text-color)",
       },
       text: {
+        opacity: 1,
         height: 150,
         width: 150,
         x: `${x as any - 150/2}px`,
@@ -76,17 +85,45 @@ function App() {
         mixBlendMode: "difference",
         backgroundColor: "white",
       },
-      opposite: {
+      footer: {
+        opacity: 1,
         x: `${x as any - size/2}px`,
         y: `${y as any - size/2}px`,
-        backgroundColor: "var(--background-color)",
+        backgroundColor: "#FFFFFF",
+        boxShadow: "0px 0px 100px 10px #FFFFFF",
+      },
+      skillCard: {
+        opacity: 1,
+        height: 150,
+        width: 150,
+        x: `${x as any - 150/2}px`,
+        y: `${y as any - 150/2}px`,
+        backgroundColor: "var(--text-color-inverse)",
         boxShadow: "0px 0px 100px 10px var(--text-color-inverse)",
+      },
+      button: {
+        opacity: 0,
+        height: 0,
+        width: 0,
+        x: `${x as any - size/2}px`,
+        y: `${y as any - size/2}px`,
+        backgroundColor: "var(--text-color)",
+        boxShadow: "0px 0px 100px 10px var(--text-color)",
       }
     }
 
-    const textEnter = () => setCursorVariant("text");
-    const skillEnter = () => setCursorVariant("opposite");
-    const cursorLeave = () => setCursorVariant("default");
+    const [cursorText, setCursorText] = useState("");
+
+    const cursorEnter = (setVariant: string, cursorText: string,) => {setCursorVariant(setVariant); setCursorText(cursorText);};
+
+    const cursorLeave = () => {setCursorVariant("default"); setCursorText("");};
+    const resetCursor = () => {setCursorVariant("reset");}
+    
+    useEffect(() => {
+      if(cursorVariant == "reset") {
+        setCursorVariant("default"); //Resets cursor to default upon theme change
+      }
+    }, [cursorVariant]);
 
     /*Nav Bar Hamburger Handler*/
     const [hamburgerActive, setHamburgerActive] = useState(false);
@@ -128,14 +165,15 @@ function App() {
             
             }}
           >
+            <span className="cursor-text">{cursorText}</span>
         </motion.div>
         <div ref={ container } className="main-container">
-          <NavBar hamburgerActive={onHamburgerActive}/>
-          <Hero onMouseEnter={textEnter} onMouseLeave={cursorLeave} progress={scrollYProgress} range={[0.05, 0.2]} targetScale={0.9}/>
-          <Skills onMouseEnter={skillEnter} onMouseLeave={cursorLeave}/>
+          <NavBar setCursor={resetCursor} hamburgerActive={onHamburgerActive}/>
+          <Hero onMouseEnter={cursorEnter} onMouseLeave={cursorLeave} progress={scrollYProgress} range={[0.05, 0.2]} targetScale={0.9}/>
+          <Skills onMouseEnter={cursorEnter} onMouseLeave={cursorLeave}/>
           <Projects />
-          <Contact />
-          <Footer />
+          <Contact onMouseEnter={cursorEnter} onMouseLeave={cursorLeave} />
+          <Footer onMouseEnter={cursorEnter} onMouseLeave={cursorLeave} />
         </div>
       </>
       
