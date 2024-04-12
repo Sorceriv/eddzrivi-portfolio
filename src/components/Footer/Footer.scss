@@ -10,16 +10,16 @@
         gap: 50px;
         flex-grow: 1;
 
-        a {
+        .link {
             display: inline;
             position: relative; 
         }
 
-        a:hover {
+        .link:hover {
             font-style: italic;
         }
 
-        a::after {
+        .link::after {
 
             background: none repeat scroll 0 0 transparent;
             bottom: 0;
@@ -34,7 +34,7 @@
             width: 0;
         }
 
-        a:hover::after {
+        .link:hover::after {
             width: 50%; 
             left: 0; 
         }
@@ -88,35 +88,7 @@
             text-align: left;
             gap: 0px;
     
-            a {
-                display: inline;
-                position: relative; 
-            }
-    
-            a:hover {
-                font-style: italic;
-            }
-    
-            a::after {
-    
-                background: none repeat scroll 0 0 transparent;
-                bottom: 0;
-                content: "";
-                display: block;
-                height: 3px;
-                border-radius: 3px;
-                left: 0;
-                position: absolute;
-                background: var(--theme-color);
-                transition: width 0.3s ease 0s, left 0.3s ease 0s;
-                width: 0;
-            }
-    
-            a:hover::after {
-                width: 50%; 
-                left: 0; 
-            }
-    
+            
             .logo-container {
                 .logo {
                     font-size: 36px;

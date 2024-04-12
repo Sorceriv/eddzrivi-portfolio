@@ -1,16 +1,16 @@
-import { motion, MotionConfig } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion, MotionConfig, MotionValue } from "framer-motion";
+import { useState } from "react";
+import  './Hamburger.scss'
+
+import MobileNav from "./MobileNav";
 
 interface Props {
-    visible: boolean,
-    onClickItem: () => void;
+    hamburgerActive: () => void,
+    display: string,
 }
 
-function Hamburger({visible, onClickItem}: Props) {
+function Hamburger({hamburgerActive, display}: Props) {
     const [active, setActive] = useState(false);
-    useEffect(() => {
-        visible ? setActive(true) : setActive(false);
-    },[visible]);
     
     return (
         <> 
@@ -22,15 +22,16 @@ function Hamburger({visible, onClickItem}: Props) {
             >
                 <motion.button 
                     initial={false}
-                    onClick={() => {setActive(previous_state => !previous_state); onClickItem();}}
-                    className="hamburger relative h-20 w-20 rounded-full bg-white/0 transition-colors hover:bg-white/20"
+                    onClick={() => {setActive(previous_state => !previous_state); hamburgerActive();}}
+                    className="hamburger-scroll h-20 w-20"
+                    style={{display: display}}
                     animate={active ? "open" : "closed"}
                     variants= {{
                         open: {
-                            background: "rgba(255,255,255,0.2)",
+                            //background: "rgba(255,255,255,0.2)",
                         },
                         closed: {
-                            background: "rgba(255,255,255,0)",
+                            //background: "rgba(255,255,255,0)",
                         }
                     }}
                 >
@@ -99,6 +100,7 @@ function Hamburger({visible, onClickItem}: Props) {
                     />
                 </motion.button>
             </MotionConfig>
+            <MobileNav clickItem={() => {setActive(false); hamburgerActive();}} visible={active}/>
         </>
     )
 }

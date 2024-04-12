@@ -2,6 +2,7 @@ import Project from "./Project"
 import  './Projects.scss'
 
 export default function Projects() {
+    /*Projects*/
     const projects_array = [
         {
             title: "PharmaScanner",

@@ -84,6 +84,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   width: 100%;
+  color: var(--text-color);
 }
 
 p, span, text, li, a, h3, h5, h6, input, label {
@@ -159,7 +160,7 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     top: 40%;
     left: 30%;
-    color: var(--text-color);
+    //color: var(--text-color);
     font-weight: 900;
     //background-color: red;
   }

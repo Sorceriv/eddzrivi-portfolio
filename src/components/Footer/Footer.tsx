@@ -1,3 +1,4 @@
+import resume from "../../assets/resume.pdf";
 import  './Footer.scss'
 
 interface Props {
@@ -26,7 +27,7 @@ function Footer({onMouseEnter, onMouseLeave}: Props) {
                 </div>
                 <div className="extra-details">
                     <span>Philippines</span>
-                    <span>eddzrivi</span>
+                    <span><a onMouseEnter={() => {onMouseEnter("resume", "Resume")}} onMouseLeave={() => {onMouseEnter("footer", "")}} href={ resume } target="_blank">eddzrivi</a></span>
                 </div>
             </div>
         </div>

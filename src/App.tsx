@@ -3,6 +3,7 @@
 import useMouse from "@react-hook/mouse-position";
 
 import PreLoader from "./components/PreLoader/PreLoader";
+import Hamburger from "./components/Hamburger/Hamburger";
 import NavBar from "./components/NavBar/NavBar";
 import Hero from "./components/Hero/Hero";
 import Skills from "./components/Skills/Skills";
@@ -10,7 +11,7 @@ import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 
-import { animate, motion, useScroll, Variants } from "framer-motion";
+import { animate, motion, useInView, useScroll, Variants } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 import './App.scss';
@@ -99,6 +100,7 @@ function App() {
         x: `${x as any - 150/2}px`,
         y: `${y as any - 150/2}px`,
         backgroundColor: "var(--text-color-inverse)",
+        color: "var(--text-color)",
         boxShadow: "0px 0px 100px 10px var(--text-color-inverse)",
       },
       button: {
@@ -109,6 +111,16 @@ function App() {
         y: `${y as any - size/2}px`,
         backgroundColor: "var(--text-color)",
         boxShadow: "0px 0px 100px 10px var(--text-color)",
+      },
+      resume: {
+        height: 150,
+        width: 150,
+        opacity: 1,
+        x: `${x as any - 150/2}px`,
+        y: `${y as any - 150/2}px`,
+        backgroundColor: "#FFFFFF",
+        color: "#000000",
+        boxShadow: "0px 0px 100px 10px #FFFFFF",
       }
     }
 
@@ -132,10 +144,10 @@ function App() {
     useEffect(() => {
       if(pLoaded) {
         if(hamburgerActive) {
-          animate("body", {position: "fixed"});
+          animate("body", {overflow: "hidden",});
         }
         else {
-          animate("body", {position: "static"});
+          animate("body", {overflow: "auto",});
         }
       }
     },[hamburgerActive])
@@ -147,7 +159,17 @@ function App() {
       offset: ['start start', 'end end']
     })
 
-    //
+    /*Hamburger Handler*/
+    const navScope = useRef(null); //Gets skill component
+    const isInView = useInView(navScope, { //Checks if skill component is in view by passing ref to the component
+      amount: 0.1,
+      //margin: "0px 0px 0px 300px",
+    });
+
+    // useEffect(() => {
+    //   //console.log(`Skill Card ${isInView ? "is" : "is NOT"} in view`);
+    //   //Maybe check if preloader is loaded(?) another approach is to remove components in view while preloader is not loaded https://stackoverflow.com/questions/40987309/react-display-loading-screen-while-dom-is-rendering
+    // }, [isInView])
     
 
     return (
@@ -168,8 +190,9 @@ function App() {
             <span className="cursor-text">{cursorText}</span>
         </motion.div>
         <div ref={ container } className="main-container">
-          <NavBar setCursor={resetCursor} hamburgerActive={onHamburgerActive}/>
-          <Hero onMouseEnter={cursorEnter} onMouseLeave={cursorLeave} progress={scrollYProgress} range={[0.05, 0.2]} targetScale={0.9}/>
+          <Hamburger hamburgerActive={onHamburgerActive} display={isInView ? "none" : "block"}/>
+          <NavBar forwardedRef={ navScope } setCursor={resetCursor} hamburgerActive={onHamburgerActive} pLoaded={pLoaded}/>
+          <Hero onMouseEnter={cursorEnter} onMouseLeave={cursorLeave} progress={scrollYProgress} range={[0.05, 0.2]} targetScale={0.9} pLoaded={pLoaded}/>
           <Skills onMouseEnter={cursorEnter} onMouseLeave={cursorLeave}/>
           <Projects />
           <Contact onMouseEnter={cursorEnter} onMouseLeave={cursorLeave} />

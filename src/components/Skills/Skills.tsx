@@ -1,11 +1,11 @@
 import  './Skills.scss'
 import Skill from './Skill';
-import { motion, useAnimate } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { motion, useAnimate, useInView, Variants } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 
 interface Props {
-    onMouseEnter: (cursorVariant: string, cursoText: string) => void;
-    onMouseLeave: () => void;
+    onMouseEnter: (cursorVariant: string, cursoText: string) => void,
+    onMouseLeave: () => void,
 }
 
 function Skills({onMouseEnter, onMouseLeave}: Props) {
@@ -74,13 +74,10 @@ function Skills({onMouseEnter, onMouseLeave}: Props) {
     ];
 
     /*Animations*/
-    
-    
     const [scope, animate] = useAnimate();
     const [carouselWidth, setCarouselWidth] = useState(0);
     const [left, setLeft] = useState(0);
     
-
     useEffect(() => {
         const observer = new ResizeObserver(() => {
             console.log("Titing malaki");
@@ -128,6 +125,36 @@ function Skills({onMouseEnter, onMouseLeave}: Props) {
         setLeft(matrix.m41-425)
     }
 
+    /*For inView animations */
+    const variants: Variants = {
+        default: {
+            marginLeft: 0,
+            opacity: 1,
+            transition: {
+                duration: 1,
+            },
+        },
+
+        hidden: {
+            opacity: 0,
+            marginLeft: "-500px",
+            transition: {
+                duration: 1,
+            },
+        },
+    }
+    
+    const isInView = useInView(scope, {
+      amount: 0.1,
+      once: true,
+      //margin: "0px 0px 0px 300px",
+    });
+
+    useEffect(() => {
+      console.log(`The element ${isInView ? "is" : "is NOT"} in view`);
+      //Maybe check if preloader is loaded(?) another approach is to remove components in view while preloader is not loaded https://stackoverflow.com/questions/40987309/react-display-loading-screen-while-dom-is-rendering
+    }, [isInView])
+
     return (
         <> 
             <div id="skills" className="skills-section">
@@ -144,6 +171,9 @@ function Skills({onMouseEnter, onMouseLeave}: Props) {
                 <div className="skills-container"> 
                     
                     <motion.div
+                        initial={"hidden"}
+                        variants={variants}
+                        animate={isInView ? "default" : "hidden"}
                         drag="x" 
                         dragConstraints={{right: 0, left: -carouselWidth}}
                         dragElastic={0} 

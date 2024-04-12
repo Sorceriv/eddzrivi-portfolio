@@ -15,6 +15,7 @@
             border-bottom: 0.5px solid rgba(128,128,128,0.5);
             flex-direction: column;
             position: relative;
+            overflow-x: hidden;
             
             .description-section {
                 padding: calc(var(--header-font-size)) var(--padding) calc(var(--header-font-size) * 1.5) var(--padding);
