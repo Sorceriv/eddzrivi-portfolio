@@ -31,7 +31,13 @@ export default {
 
 Update Logs:
 
+-13/04/2024
+
+--
+
 -12/04/2024
+
+--Cursor updates, project updates
 
 --Major revisions, added transactions, adjusted hero section mobile view
 
