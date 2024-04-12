@@ -40,7 +40,7 @@ function NavBar({forwardedRef, setCursor, hamburgerActive, pLoaded}: Props) {
   //   console.log(`The element ${isInView ? "is" : "is NOT"} in view`);
   //   //Maybe check if preloader is loaded(?) another approach is to remove components in view while preloader is not loaded https://stackoverflow.com/questions/40987309/react-display-loading-screen-while-dom-is-rendering
   // }, [isInView])
-  const [loaded, setLoaded] = useState(false);
+  //const [loaded, setLoaded] = useState(false);
 
   const container: Variants = {
       hidden: {
