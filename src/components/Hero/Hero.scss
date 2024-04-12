@@ -145,11 +145,11 @@
 //For 12/04/2024 EDDZ:
 //Scroll and after preloader/onload transitions/animations (IN PROGRESS in project.tsx https://www.youtube.com/watch?v=PczQ0qSwe1E)
 //Do not make body fixed when preloader and navbar, it needs to save current page position so maybe just disable scroll and fix hamburger and mobilenav (IN PROGRESS)
-//Hamburger only appear onscroll to skillandtoolset (IN PROGRESS)
-//Mobile navbar functionality
+//Hamburger should only appear onscroll to skillandtoolset (DONE)
+//Mobile navbar functionality (IN PROGRESS, FIX MOBILE NAVBAR TRANSITION WHEN CLOSING)
 //Add content and icons (IN PROGRESS)
-//Fix preloader font rendering as times new roman on load (IN PROGRESS TRY ARIAL BLACK FALLBACK)
-//Fix mouse position after preloader load
+//Fix preloader font rendering as times new roman on load (DONE? TRIED ARIAL BLACK FALLBACK)
+//Fix mouse position after preloader load (Should not be stuck. currently stuck until hompage transitions is done)
 //Fix overall layout (Ex. mobile navbar on zoomin cramped, mobile view should have more space so available and button is seen even with address bar below)
 //Github yt doc icons and text link onhover
 //Hide address ex. eddzrivi.dev/#skills hide #skills

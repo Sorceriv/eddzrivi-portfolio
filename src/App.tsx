@@ -49,14 +49,14 @@ function App() {
     
 
     useEffect(() => {
-      if(pLoaded == true) {
+      // if(pLoaded == true) {
         if (mouse.x !== null) {
           setCurrX(mouse.clientX);
         }
         if (mouse.y !== null) {
           setCurrY(mouse.clientY);
         }
-      }
+      // }
     },[mouse])
     
     const [cursorVariant, setCursorVariant] = useState("default");
