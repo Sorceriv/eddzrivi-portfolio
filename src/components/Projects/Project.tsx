@@ -14,10 +14,11 @@ interface Props {
     image: string,
     github: string,
     youtube: string,
-    documentation: string,     
+    documentation: string,  
+    technologies: string,   
 }
 
-export default function Projects({onMouseEnter, onMouseLeave, title, description, image, github, youtube, documentation} : Props) {
+export default function Projects({onMouseEnter, onMouseLeave, title, description, image, github, youtube, documentation, technologies} : Props) {
     
     /*For inView animations */
     const variants: Variants = {
@@ -71,7 +72,7 @@ export default function Projects({onMouseEnter, onMouseLeave, title, description
                     </text>
                 </div>
                 <div className="description-footer">
-                    <text onMouseEnter={() => {onMouseEnter("projectDescription" ,"Dart, Flutter, Python, Android Studio")}} onMouseLeave={onMouseLeave}>Technologies used*</text>
+                    <text onMouseEnter={() => {onMouseEnter("projectDescription" ,technologies)}} onMouseLeave={onMouseLeave}>Technologies used*</text>
                     <div className="description-links">
                         <span>
                             <a onMouseEnter={() => {onMouseEnter("projectLink" ,"GitHub")}} onMouseLeave={onMouseLeave} href={github} target="_blank">

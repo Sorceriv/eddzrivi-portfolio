@@ -18,6 +18,7 @@ export default function Projects({onMouseEnter, onMouseLeave}: Props) {
             github: "https://github.com/Sorceriv/PharmaScanner",
             youtube: "https://youtu.be/gevdtRQ88gg",
             documentation: "#",
+            technologies: "Dart, Flutter, Python, Android Studio",
         },
     ];
 
