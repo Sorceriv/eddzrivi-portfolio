@@ -1,17 +1,23 @@
+import file_icon from "../../assets/images/icons/file_icon.svg";
+import github_icon from "../../assets/images/icons/github_icon.svg";
+import youtube_icon from "../../assets/images/icons/youtube_icon.svg";
+
 import { motion, useInView, Variants } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import  './Project.scss'
 
 interface Props {
+    onMouseEnter: (cursorVariant: string, cursoText: string) => void,
+    onMouseLeave: () => void,
     title: string,
     description: string,
     image: string,
     github: string,
     youtube: string,
-    documentation: string,
+    documentation: string,     
 }
 
-export default function Projects({title, description, image, github, youtube, documentation} : Props) {
+export default function Projects({onMouseEnter, onMouseLeave, title, description, image, github, youtube, documentation} : Props) {
     
     /*For inView animations */
     const variants: Variants = {
@@ -65,15 +71,25 @@ export default function Projects({title, description, image, github, youtube, do
                     </text>
                 </div>
                 <div className="description-footer">
-                    <text>Technologies used*</text>
+                    <text onMouseEnter={() => {onMouseEnter("projectDescription" ,"Dart, Flutter, Python, Android Studio")}} onMouseLeave={onMouseLeave}>Technologies used*</text>
                     <div className="description-links">
-                        <span>| <a href={github} target="_blank">GH</a> | <a href={youtube} target="_blank">YT</a> | <a href={documentation}>DOC</a> |</span>
+                        <span>
+                            <a onMouseEnter={() => {onMouseEnter("projectLink" ,"GitHub")}} onMouseLeave={onMouseLeave} href={github} target="_blank">
+                                <img src={github_icon}/>
+                            </a> 
+                            <a onMouseEnter={() => {onMouseEnter("projectLink" ,"YouTube")}} onMouseLeave={onMouseLeave} href={youtube} target="_blank">
+                                <img src={youtube_icon}/>
+                            </a> 
+                            <a onMouseEnter={() => {onMouseEnter("projectLink" ,"Document")}} onMouseLeave={onMouseLeave} href={documentation}>
+                                <img src={file_icon}/>
+                            </a> 
+                        </span>
                     </div>
                 </div>
             </motion.div>
             <motion.div initial={"hiddenRight"} variants={variants} animate={isInView ? "default" : "hiddenRight"} className="project-section">
                 <div style={{"backgroundImage": "url(" + image + ")"}} className="project">
-                    {/* <img src={ pharmascanner } alt="project"/> */}
+                    <img src={ image } alt=""/>
                 </div>
             </motion.div>
         </div>

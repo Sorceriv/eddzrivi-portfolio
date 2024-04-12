@@ -18,8 +18,9 @@
             overflow-x: hidden;
             
             .description-section {
-                padding: calc(var(--header-font-size)) var(--padding) calc(var(--header-font-size) * 1.5) var(--padding);
+                padding: calc(var(--header-font-size)) var(--padding) 0px var(--padding);
                 background-color: var(--background-color);
+                //background-color: red;
                 display: flex;
                 flex-direction: column;
                 //background-color: red;
@@ -61,32 +62,52 @@
                     left: 0;
                     margin-top: auto;
                     width: 100%;
-                    padding: 0px var(--subheader-font-size) var(--header-font-size) var(--subheader-font-size);
-                    //background-color: yellow;
+                    padding: 0px var(--padding) var(--header-font-size) var(--padding);
+                    //background-color: green;
                     text {
                         font-weight: 900;
                     }
                     .description-links {
                         margin-left: auto;
                         font-size: 14px;
+
+                        span {
+                            display: flex;
+                            flex-direction: row;
+                            gap: 15px;
+
+                            img {
+                                width: 20px;
+                                height: 20px;
+                                display: inline;
+                                filter: invert(var(--color));
+                            }
+
+                        }
+                        
                     }
                 }
             }
 
             .project-section {
-                padding: calc(var(--header-font-size)) var(--padding) calc(var(--header-font-size) * 1.5) var(--padding);
+                padding: calc(var(--header-font-size)) var(--padding) calc(var(--header-font-size) * 1) var(--padding);
                 background-color: var(--background-color);
+                //background-color: yellow;
                 
                 .project {
                     display: block;
                     margin: auto;
                     background-color: grey;
-                    height: 300px;
+                    max-height: 500;
+                    max-width: 750;
                     border-radius: 10px;
                     background-size: cover;
                     background-position: bottom;
+                    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.1);
                     img {
-                        
+                        width: 75vw;
+                        height: 50vw;
+                        border-radius: 10px;
                     }
                 }
                 margin-bottom: 100px;
@@ -96,7 +117,7 @@
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: 1400px) {
     .projects-section {
         .container-section {
             .projects-title {
@@ -142,9 +163,13 @@
                     padding: calc(var(--header-font-size) * 1.5) var(--padding) calc(var(--header-font-size) * 1.5) var(--padding) ;
                    
                     .project {
+                        min-height: 350px;
+                        min-width: 525px;
+                        max-height: 350px;
+                        max-width: 525px;
                         img {
-                            max-height: 500px;
-                            max-width: 500px;
+                            width: 525px;
+                            height: 350px;
                         }
                     }
                     margin-bottom: 0px;
@@ -199,9 +224,13 @@
                     padding: calc(var(--header-font-size) * 1.5) var(--padding) calc(var(--header-font-size) * 1.5) var(--padding);
                    
                     .project {
+                        min-height: 350px;
+                        min-width: 525px;
+                        max-height: 350px;
+                        max-width: 525px;
                         img {
-                            max-height: 500px;
-                            max-width: 500px;
+                            width: 525px;
+                            height: 350px;
                         }
                     }
                 }

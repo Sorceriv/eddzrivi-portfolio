@@ -19,7 +19,7 @@ function NavBar({forwardedRef, setCursor, hamburgerActive, pLoaded}: Props) {
   const [scope, animate] = useAnimate();
   useEffect(() => {
     {
-      visible ? animate(scope.current, { opacity: 1, zIndex: 2, }, {duration: 0.5}) : animate(scope.current, { opacity: 0, zIndex: -1, }, {duration: 0.5})
+      visible ? animate(scope.current, { opacity: 1, zIndex: 2, }, {duration: 0.5}) : animate(scope.current, { opacity: 0, zIndex: 2, transitionEnd: { zIndex: -1, }, }, {duration: 0.5})
     };
     console.log(visible);
   }, [visible]);

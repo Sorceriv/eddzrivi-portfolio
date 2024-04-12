@@ -146,7 +146,7 @@
 //Scroll and after preloader/onload transitions/animations (IN PROGRESS in project.tsx https://www.youtube.com/watch?v=PczQ0qSwe1E)
 //Do not make body fixed when preloader and navbar, it needs to save current page position so maybe just disable scroll and fix hamburger and mobilenav (IN PROGRESS)
 //Hamburger should only appear onscroll to skillandtoolset (DONE)
-//Mobile navbar functionality (IN PROGRESS, FIX MOBILE NAVBAR TRANSITION WHEN CLOSING)
+//Mobile navbar functionality (IN PROGRESS, FIX MOBILE NAVBAR TRANSITION WHEN CLOSING, CAUSE IS Z-INDEX. DONE, fixed using transitionEnd)
 //Add content and icons (IN PROGRESS)
 //Fix preloader font rendering as times new roman on load (DONE? TRIED ARIAL BLACK FALLBACK)
 //Fix mouse position after preloader load (Should not be stuck. currently stuck until hompage transitions is done)

@@ -121,6 +121,27 @@ function App() {
         backgroundColor: "#FFFFFF",
         color: "#000000",
         boxShadow: "0px 0px 100px 10px #FFFFFF",
+      },
+      projectLink: {
+        height: 125,
+        width: 125,
+        opacity: 1,
+        x: `${x as any - 125/2}px`,
+        y: `${y as any - 125/2}px`,
+        backgroundColor: "var(--text-color)",
+        color: "var(--text-color-inverse)",
+        boxShadow: "0px 0px 100px 10px var(--text-color)",
+      },
+      projectDescription: {
+        height: 125,
+        width: 125,
+        opacity: 1,
+        borderRadius: 0,
+        x: `${x as any - 125/2}px`,
+        y: `${y as any - 125/2}px`,
+        backgroundColor: "var(--text-color)",
+        color: "var(--text-color-inverse)",
+        boxShadow: "0px",
       }
     }
 
@@ -194,7 +215,7 @@ function App() {
           <NavBar forwardedRef={ navScope } setCursor={resetCursor} hamburgerActive={onHamburgerActive} pLoaded={pLoaded}/>
           <Hero onMouseEnter={cursorEnter} onMouseLeave={cursorLeave} progress={scrollYProgress} range={[0.05, 0.2]} targetScale={0.9} pLoaded={pLoaded}/>
           <Skills onMouseEnter={cursorEnter} onMouseLeave={cursorLeave}/>
-          <Projects />
+          <Projects onMouseEnter={cursorEnter} onMouseLeave={cursorLeave}/>
           <Contact onMouseEnter={cursorEnter} onMouseLeave={cursorLeave} />
           <Footer onMouseEnter={cursorEnter} onMouseLeave={cursorLeave} />
         </div>
