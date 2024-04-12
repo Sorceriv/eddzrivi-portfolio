@@ -1,4 +1,4 @@
-import { motion, MotionConfig, MotionValue } from "framer-motion";
+import { motion, MotionConfig } from "framer-motion";
 import { useState } from "react";
 import  './Hamburger.scss'
 

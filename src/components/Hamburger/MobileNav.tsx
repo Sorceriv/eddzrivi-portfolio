@@ -1,7 +1,7 @@
 import resume from "../../assets/resume.pdf";
 
-import { motion, useAnimate, useInView, Variants } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useAnimate } from "framer-motion";
+import { useEffect } from "react";
 import "./MobileNav.scss";
 
 interface Props {

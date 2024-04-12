@@ -1,7 +1,6 @@
 import  './Hero.scss'
 import picture from "../../assets/main-pic.jpg";
 import { motion, useTransform, Variants } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
 
 
 

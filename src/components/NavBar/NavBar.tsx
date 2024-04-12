@@ -2,9 +2,9 @@ import resume from "../../assets/resume.pdf";
 
 import Hamburger from "./Hamburger";
 import ModeToggle from "./ModeToggle";
-import { motion, useAnimate, useInView, Variants } from "framer-motion";
+import { motion, useAnimate, Variants } from "framer-motion";
 import  './NavBar.scss'
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface Props {
   forwardedRef: React.MutableRefObject<null>,
