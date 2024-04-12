@@ -33,7 +33,9 @@ Update Logs:
 
 -12/04/2024
 
---
+--Major revisions, added transactions, adjusted hero section mobile view
+
+--Adjusted cursor a little
 
 -11/04/2024
 
