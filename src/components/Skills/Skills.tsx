@@ -1,7 +1,7 @@
 import  './Skills.scss'
 import Skill from './Skill';
 import { motion, useAnimate, useInView, Variants } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface Props {
     onMouseEnter: (cursorVariant: string, cursoText: string) => void,
