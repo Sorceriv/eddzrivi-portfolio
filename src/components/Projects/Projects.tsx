@@ -29,7 +29,7 @@ export default function Projects({onMouseEnter, onMouseLeave}: Props) {
                     <h1 className="projects-title">Projects</h1>
 
                     {projects_array.map((d, i) => (
-                            <Project onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} title={d.title} description={d.description} image={d.image} github={d.github} youtube={d.youtube} documentation={d.documentation} key={i}/>
+                            <Project onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} title={d.title} description={d.description} image={d.image} github={d.github} youtube={d.youtube} documentation={d.documentation} technologies={d.technologies} key={i}/>
                     ))}
 {/* 
                     <div className="projects-container">
