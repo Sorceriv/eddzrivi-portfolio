@@ -143,40 +143,36 @@
 //Migrate to eddzrivi.dev (IN PROGRESS)
 
 //For 12/04/2024 EDDZ:
-//On projects technologies used, use json to represent the text so it is not hard to edit
+//On projects technologies used, use json to represent the text so it is not hard to edit (DONE)
 //Scroll and after preloader/onload transitions/animations (IN PROGRESS in project.tsx https://www.youtube.com/watch?v=PczQ0qSwe1E)
-//Do not make body fixed when preloader and navbar, it needs to save current page position so maybe just disable scroll and fix hamburger and mobilenav (IN PROGRESS)
+//Do not make body fixed when preloader and navbar, it needs to save current page position so maybe just disable scroll and fix hamburger and mobilenav (DONE)
 //Hamburger should only appear onscroll to skillandtoolset (DONE)
 //Mobile navbar functionality (IN PROGRESS, FIX MOBILE NAVBAR TRANSITION WHEN CLOSING, CAUSE IS Z-INDEX. DONE, fixed using transitionEnd)
 //Add content and icons (IN PROGRESS)
 //Fix preloader font rendering as times new roman on load (DONE? TRIED ARIAL BLACK FALLBACK)
-//Fix mouse position after preloader load (Should not be stuck. currently stuck until hompage transitions is done)
-//Fix overall layout (Ex. mobile navbar on zoomin cramped, mobile view should have more space so available and button is seen even with address bar below)
-//Github yt doc icons and text link onhover
+//Fix mouse position after preloader load (Should not be stuck. currently stuck until hompage transitions is done, DONE)
+//Github yt doc icons and text link onhover (DONE)
+//Test different colors/layouts (IN PROGRESS)
+//Fix project image to be better layout and more responsive (DONE)
+//Fix contact form email (DONE)
+//Migrate to eddzrivi.dev (DONE)
+
+//For Next indefinite EDDZ:
+//Scroll and after preloader/onload transitions/animations (IN PROGRESS in project.tsx https://www.youtube.com/watch?v=PczQ0qSwe1E)
+//Add content and icons (IN PROGRESS)
+//Fix overall layout and colors (Ex. mobile navbar on zoomin cramped, mobile view should have more space so available and button is seen even with address bar below)
 //Hide address ex. eddzrivi.dev/#skills hide #skills
 //Test different colors/layouts (IN PROGRESS)
-//Fix project image to be better layout and more responsive
 //Fonts preloader not loading before animating
 //Review contact layout (maybe stick right side to right side so padding matches and maybe looks better)
-//Fix contact form email
 //Change <text> elements to <span> elements
-//Add page animations
-//Add cursor animations
-//Hamburger and light/darkmode design
+//Hamburger and light/darkmode design 
 //Placeholder for empty projects
-//Colors (add or remove match with pastel red)
-//Fix slider of skills, arrows, and its layout including mobile (CURRENTLY AT LAYOUTS, ALIGN SKILL&TOOLSET AND TOOLS AND TECHNOLOGIES, REMOVE LINE HEIGHT OF BIG FONTS) (DONE EXCEPT ARROWS CHANGE UGLY ARROWS TO SVG)
 //Fix scroll and basic animations (Currently: https://www.youtube.com/watch?v=am0ZueQmpzg) (IN PROGRESS, CURRENTLY AT SMOOTH SCROLL. AND THEN DO HAMBURGER APPEARS AND LIGHTORDARKMODE)
-//Cursor animations
-//Fix hamburger menu onclick animation go to section of page
-//fix styles to  be responsive! specially hero section think of idea then make it resposnive at all sizes (vw optimization) then add entry animations then add hamburger on scroll
-//Fix zoomout layout and cursor following on zoomout
-//Fix forms
-//Fix projects images (or just upload edited size)
-//Add projects
-//Migrate to eddzrivi.dev (IN PROGRESS)
-//Add in achievements and responsibilities how it helped company ex. which boosted sales by 12%
-
+//Add in achievements and responsibilities how it helped company ex. which boosted sales by 12%. Add Agile methodology to resume.
+//Make contact form required
+//Scroll hamburger popup animation and fadeout
+//Tab navigation bug popup hamburger disappears due to being in nav
 
 
 @media (min-width: 768px) {
