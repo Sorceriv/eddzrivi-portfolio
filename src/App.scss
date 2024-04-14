@@ -216,7 +216,7 @@ body::-webkit-scrollbar-thumb {
 
 @media (min-width: 768px) {
   * {
-    cursor: default!important;
+    cursor: auto!important;
   }
 
   :root {
@@ -248,7 +248,7 @@ body::-webkit-scrollbar-thumb {
 
 @media (min-width: 1550px) {
   * {
-    cursor: default!important;
+    cursor: auto!important;
   }
 
   :root {
