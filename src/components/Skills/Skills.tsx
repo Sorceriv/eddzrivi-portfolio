@@ -80,7 +80,7 @@ function Skills({onMouseEnter, onMouseLeave}: Props) {
     
     useEffect(() => {
         const observer = new ResizeObserver(() => {
-            console.log("Titing malaki");
+            //console.log("Titing malaki");
             setCarouselWidth(scope.current.scrollWidth - scope.current.offsetWidth);
         });
         observer.observe(scope.current);
@@ -151,7 +151,7 @@ function Skills({onMouseEnter, onMouseLeave}: Props) {
     });
 
     useEffect(() => {
-      console.log(`The element ${isInView ? "is" : "is NOT"} in view`);
+      //console.log(`The element ${isInView ? "is" : "is NOT"} in view`);
       //Maybe check if preloader is loaded(?) another approach is to remove components in view while preloader is not loaded https://stackoverflow.com/questions/40987309/react-display-loading-screen-while-dom-is-rendering
     }, [isInView])
 
