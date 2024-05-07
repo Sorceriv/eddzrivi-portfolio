@@ -31,9 +31,9 @@ export default {
 
 Update Logs:
 
--13/04/2024
+-07/05/2024
 
---
+--Added project, some redesign in projects section
 
 -12/04/2024
 
