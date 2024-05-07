@@ -1,4 +1,5 @@
 import pharmascanner from "../../assets/images/pharmascanner.png";
+import qva from "../../assets/images/qva.png";
 
 import Project from "./Project"
 import  './Projects.scss'
@@ -19,6 +20,15 @@ export default function Projects({onMouseEnter, onMouseLeave}: Props) {
             youtube: "https://youtu.be/gevdtRQ88gg",
             documentation: "#",
             technologies: "Dart, Flutter, Python, Android Studio",
+        },
+        {
+            title: "QVA",
+            description: "Qualys Vulnerability Assistant. A chatbot assistant built for assisting developers in fixing vulnerabilities with the help of Qualys Dataset. Achieved using the SKLearn, Flask, Pandas, Numpy, React, Typescript, Sass. I was going to use GPT for the conversational feature as well as a Text Similarity algorithm, but my free GPT credits ran out.",
+            image: qva,
+            github: "https://github.com/Sorceriv/QVA",
+            youtube: "https://youtu.be/aMmWofSyABc",
+            documentation: "#",
+            technologies: "Python, Flask, React, TypeScript, Sass",
         },
     ];
 

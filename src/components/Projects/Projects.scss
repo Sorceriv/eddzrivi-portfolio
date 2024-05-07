@@ -39,11 +39,11 @@
                     .project-title::after {
                         position: absolute;
                         content: "";
-                        height: calc(var(--subheader-font-size) * 0.7);
+                        height: calc(var(--subheader-font-size) * 0.6);
                         width: 150px;
                         background-color: var(--theme-color);
                         top: calc(var(--subheader-font-size) * 0.8);
-                        left: calc(var(--subheader-font-size) * 6);
+                        left: calc(var(--subheader-font-size) * 0);
                         z-index: -1;
                
                     }

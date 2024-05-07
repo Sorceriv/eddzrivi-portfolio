@@ -90,7 +90,7 @@ export default function Projects({onMouseEnter, onMouseLeave, title, description
             </motion.div>
             <motion.div initial={"hiddenRight"} variants={variants} animate={isInView ? "default" : "hiddenRight"} className="project-section">
                 <div style={{"backgroundImage": "url(" + image + ")"}} className="project">
-                    <img src={ image } alt=""/>
+                    {/* <img src={ image } alt=""/> */}
                 </div>
             </motion.div>
         </div>
